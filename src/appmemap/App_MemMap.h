@@ -1,0 +1,307 @@
+/*******************************************************************************
+*   Project      : FRDM_A_S32K312_MC_PMSM_FOC_2Sh
+*   Version      : 1.0
+*   RTD Version  : 7.0.0
+*   Brief description  :
+*   Memory mapping specification.
+*
+*   Copyright 2022, 2023, 2026 NXP
+*
+*   NXP Proprietary. This software is owned or controlled by NXP and may only be
+*   used strictly in accordance with the applicable license terms. By expressly
+*   accepting such terms or by downloading, installing, activating and/or otherwise
+*   using the software, you are agreeing that you have read, and that you agree to
+*   comply with and are bound by, such license terms. If you do not agree to be
+*   bound by the applicable license terms, then you may not retain, install,
+*   activate or otherwise use the software.
+*******************************************************************************/
+/**
+* @brief Symbol used for checking correctness of the includes
+*/
+#define MEMMAP_ERROR
+
+/**************************************** App - Motor Control *******************************/
+#ifdef APP_START_SEC_CODE_FLASH
+    /**
+    * @file App_MemMap.h
+    */
+    #undef APP_START_SEC_CODE_FLASH
+    #define ENTERED_APP_START_SEC_CODE_FLASH
+    #ifndef MEMMAP_MATCH_ERROR
+        #define MEMMAP_MATCH_ERROR
+    #else
+        #ifndef APP_STOP_SEC_CODE_FLASH
+        #error "MemMap.h, no valid matching start-stop section defined."
+        #endif
+    #endif
+    /**
+    * @file App_MemMap.h
+    */
+    #undef MEMMAP_ERROR
+    #pragma GCC section text ".mcal_text" 
+#endif
+
+#ifdef APP_STOP_SEC_CODE_FLASH
+    /**
+    * @file App_MemMap.h
+    */
+    #ifdef ENTERED_APP_START_SEC_CODE_FLASH
+        #undef ENTERED_APP_START_SEC_CODE_FLASH
+    #else
+        #error "MemMap.h, no valid matching start-stop section defined."
+    #endif
+    #ifdef MEMMAP_MATCH_ERROR
+        #undef MEMMAP_MATCH_ERROR
+    #endif
+    #undef APP_STOP_SEC_CODE_FLASH
+    /**
+    * @file App_MemMap.h
+    */
+    #undef MEMMAP_ERROR
+    #pragma GCC section text
+#endif
+
+#ifdef APP_START_SEC_CODE_RAM
+    /**
+    * @file App_MemMap.h
+    */
+    #undef APP_START_SEC_CODE_RAM
+    #define ENTERED_APP_START_SEC_CODE_RAM
+    #ifndef MEMMAP_MATCH_ERROR
+        #define MEMMAP_MATCH_ERROR
+    #else
+        #ifndef APP_STOP_SEC_CODE_RAM
+        #error "MemMap.h, no valid matching start-stop section defined."
+        #endif
+    #endif
+    /**
+    * @file App_MemMap.h
+    */
+    #undef MEMMAP_ERROR
+    #pragma GCC section text ".ramcode"
+#endif
+
+#ifdef APP_STOP_SEC_CODE_RAM
+    /**
+    * @file App_MemMap.h
+    */
+    #ifdef ENTERED_APP_START_SEC_CODE_RAM
+        #undef ENTERED_APP_START_SEC_CODE_RAM
+    #else
+        #error "MemMap.h, no valid matching start-stop section defined."
+    #endif
+    #ifdef MEMMAP_MATCH_ERROR
+        #undef MEMMAP_MATCH_ERROR
+    #endif
+    #undef APP_STOP_SEC_CODE_RAM
+    /**
+    * @file App_MemMap.h
+    */
+    #undef MEMMAP_ERROR
+    #pragma GCC section text
+#endif
+
+#ifdef APP_START_SEC_CODE_ITCM
+    /**
+    * @file App_MemMap.h
+    */
+    #undef APP_START_SEC_CODE_ITCM
+    #define ENTERED_APP_START_SEC_CODE_ITCM
+    #ifndef MEMMAP_MATCH_ERROR
+        #define MEMMAP_MATCH_ERROR
+    #else
+        #ifndef APP_STOP_SEC_CODE_ITCM
+        #error "MemMap.h, no valid matching start-stop section defined."
+        #endif
+    #endif
+    /**
+    * @file App_MemMap.h
+    */
+    #undef MEMMAP_ERROR
+    #pragma GCC section text ".itcm_text"
+#endif
+
+#ifdef APP_STOP_SEC_CODE_ITCM
+    /**
+    * @file App_MemMap.h
+    */
+    #ifdef ENTERED_APP_START_SEC_CODE_ITCM
+        #undef ENTERED_APP_START_SEC_CODE_ITCM
+    #else
+        #error "MemMap.h, no valid matching start-stop section defined."
+    #endif
+    #ifdef MEMMAP_MATCH_ERROR
+        #undef MEMMAP_MATCH_ERROR
+    #endif
+    #undef APP_STOP_SEC_CODE_ITCM
+    /**
+    * @file App_MemMap.h
+    */
+    #undef MEMMAP_ERROR
+    #pragma GCC section text
+#endif
+
+#ifdef APP_START_SEC_VAR_CLEARED_UNSPECIFIED_RAM
+    /**
+    * @file App_MemMap.h
+    */
+    #undef APP_START_SEC_VAR_CLEARED_UNSPECIFIED_RAM
+    #define ENTERED_APP_START_SEC_VAR_CLEARED_UNSPECIFIED_RAM
+    #ifndef MEMMAP_MATCH_ERROR
+        #define MEMMAP_MATCH_ERROR
+    #else
+        #ifndef APP_STOP_SEC_VAR_CLEARED_UNSPECIFIED_RAM
+        #error "MemMap.h, no valid matching start-stop section defined."
+        #endif
+    #endif
+    /**
+    * @file App_MemMap.h
+    */
+    #undef MEMMAP_ERROR
+    #pragma GCC section bss ".mcal_bss"
+#endif
+
+#ifdef APP_STOP_SEC_VAR_CLEARED_UNSPECIFIED_RAM
+    /**
+    * @file App_MemMap.h
+    */
+    #ifdef ENTERED_APP_START_SEC_VAR_CLEARED_UNSPECIFIED_RAM
+        #undef ENTERED_APP_START_SEC_VAR_CLEARED_UNSPECIFIED_RAM
+    #else
+        #error "MemMap.h, no valid matching start-stop section defined."
+    #endif
+    #ifdef MEMMAP_MATCH_ERROR
+        #undef MEMMAP_MATCH_ERROR
+    #endif
+    #undef APP_STOP_SEC_VAR_CLEARED_UNSPECIFIED_RAM
+    /**
+    * @file App_MemMap.h
+    */
+    #undef MEMMAP_ERROR
+    #pragma GCC section bss
+#endif
+
+#ifdef APP_START_SEC_VAR_CLEARED_UNSPECIFIED_DTCM
+    /**
+    * @file App_MemMap.h
+    */
+    #undef APP_START_SEC_VAR_CLEARED_UNSPECIFIED_DTCM
+    #define ENTERED_APP_START_SEC_VAR_CLEARED_UNSPECIFIED_DTCM
+    #ifndef MEMMAP_MATCH_ERROR
+        #define MEMMAP_MATCH_ERROR
+    #else
+        #ifndef APP_STOP_SEC_VAR_CLEARED_UNSPECIFIED_DTCM
+        #error "MemMap.h, no valid matching start-stop section defined."
+        #endif
+    #endif
+    /**
+    * @file App_MemMap.h
+    */
+    #undef MEMMAP_ERROR
+    #pragma GCC section bss ".dtcm_bss"
+#endif
+
+#ifdef APP_STOP_SEC_VAR_CLEARED_UNSPECIFIED_DTCM
+    /**
+    * @file App_MemMap.h
+    */
+    #ifdef ENTERED_APP_START_SEC_VAR_CLEARED_UNSPECIFIED_DTCM
+        #undef ENTERED_APP_START_SEC_VAR_CLEARED_UNSPECIFIED_DTCM
+    #else
+        #error "MemMap.h, no valid matching start-stop section defined."
+    #endif
+    #ifdef MEMMAP_MATCH_ERROR
+        #undef MEMMAP_MATCH_ERROR
+    #endif
+    #undef APP_STOP_SEC_VAR_CLEARED_UNSPECIFIED_DTCM
+    /**
+    * @file App_MemMap.h
+    */
+    #undef MEMMAP_ERROR
+    #pragma GCC section bss
+#endif
+
+#ifdef APP_START_SEC_VAR_INIT_UNSPECIFIED_RAM
+    /**
+    * @file App_MemMap.h
+    */
+    #undef APP_START_SEC_VAR_INIT_UNSPECIFIED_RAM
+    #define ENTERED_APP_START_SEC_VAR_INIT_UNSPECIFIED_RAM
+    #ifndef MEMMAP_MATCH_ERROR
+        #define MEMMAP_MATCH_ERROR
+    #else
+        #ifndef APP_STOP_SEC_VAR_INIT_UNSPECIFIED_RAM
+        #error "MemMap.h, no valid matching start-stop section defined."
+        #endif
+    #endif
+    /**
+    * @file App_MemMap.h
+    */
+    #undef MEMMAP_ERROR
+    #pragma GCC section data ".mcal_data"
+    #pragma GCC section bss ".mcal_bss"
+#endif
+
+#ifdef APP_STOP_SEC_VAR_INIT_UNSPECIFIED_RAM
+    /**
+    * @file App_MemMap.h
+    */
+    #ifdef ENTERED_APP_START_SEC_VAR_INIT_UNSPECIFIED_RAM
+        #undef ENTERED_APP_START_SEC_VAR_INIT_UNSPECIFIED_RAM
+    #else
+        #error "MemMap.h, no valid matching start-stop section defined."
+    #endif
+    #ifdef MEMMAP_MATCH_ERROR
+        #undef MEMMAP_MATCH_ERROR
+    #endif
+    #undef APP_STOP_SEC_VAR_INIT_UNSPECIFIED_RAM
+    /**
+    * @file App_MemMap.h
+    */
+    #undef MEMMAP_ERROR
+    #pragma GCC section bss
+    #pragma GCC section data
+#endif
+
+#ifdef APP_START_SEC_VAR_INIT_UNSPECIFIED_DTCM
+    /**
+    * @file App_MemMap.h
+    */
+    #undef APP_START_SEC_VAR_INIT_UNSPECIFIED_DTCM
+    #define ENTERED_APP_START_SEC_VAR_INIT_UNSPECIFIED_DTCM
+    #ifndef MEMMAP_MATCH_ERROR
+        #define MEMMAP_MATCH_ERROR
+    #else
+        #ifndef APP_STOP_SEC_VAR_INIT_UNSPECIFIED_DTCM
+        #error "MemMap.h, no valid matching start-stop section defined."
+        #endif
+    #endif
+    /**
+    * @file App_MemMap.h
+    */
+    #undef MEMMAP_ERROR
+    #pragma GCC section data ".dtcm_data"
+    #pragma GCC section bss ".dtcm_bss"
+#endif
+
+#ifdef APP_STOP_SEC_VAR_INIT_UNSPECIFIED_DTCM
+    /**
+    * @file App_MemMap.h
+    */
+    #ifdef ENTERED_APP_START_SEC_VAR_INIT_UNSPECIFIED_DTCM
+        #undef ENTERED_APP_START_SEC_VAR_INIT_UNSPECIFIED_DTCM
+    #else
+        #error "MemMap.h, no valid matching start-stop section defined."
+    #endif
+    #ifdef MEMMAP_MATCH_ERROR
+        #undef MEMMAP_MATCH_ERROR
+    #endif
+    #undef APP_STOP_SEC_VAR_INIT_UNSPECIFIED_DTCM
+    /**
+    * @file App_MemMap.h
+    */
+    #undef MEMMAP_ERROR
+    #pragma GCC section bss
+    #pragma GCC section data
+#endif
+/**************************************************************************************************/

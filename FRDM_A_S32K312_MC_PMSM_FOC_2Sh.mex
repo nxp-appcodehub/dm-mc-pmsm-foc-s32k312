@@ -1,0 +1,2479 @@
+<?xml version="1.0" encoding= "UTF-8" ?>
+<configuration name="S32K312" xsi:schemaLocation="http://mcuxpresso.nxp.com/XSD/mex_configuration_18 http://mcuxpresso.nxp.com/XSD/mex_configuration_18.xsd" uuid="33b1f804-5b10-4280-93c1-6e4ed3098eff" version="18" xmlns="http://mcuxpresso.nxp.com/XSD/mex_configuration_18" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <common>
+      <processor>S32K312</processor>
+      <package>S32K312_172HDQFP</package>
+      <mcu_data>PlatformSDK_S32K3</mcu_data>
+      <cores selected="M7_0">
+         <core name="Cortex-M7" id="M7_0" description=""/>
+      </cores>
+      <description>Configuration imported from FRDM_A_S32K312_MC_PMSM_FOC_2Sh</description>
+   </common>
+   <preferences>
+      <validate_boot_init_only>true</validate_boot_init_only>
+      <generate_code_modified_registers_only>false</generate_code_modified_registers_only>
+      <update_include_paths>true</update_include_paths>
+      <enable_parallel_routing>true</enable_parallel_routing>
+      <generate_registers_defines>false</generate_registers_defines>
+   </preferences>
+   <tools>
+      <pins name="Pins" version="17.0" enabled="true" update_project_code="true">
+         <generated_project_files>
+            <file path="board/Siul2_Port_Ip_Cfg.c" update_enabled="true"/>
+            <file path="board/Siul2_Port_Ip_Cfg.h" update_enabled="true"/>
+            <file path="board/Tspc_Port_Ip_Cfg.c" update_enabled="true"/>
+            <file path="board/Tspc_Port_Ip_Cfg.h" update_enabled="true"/>
+         </generated_project_files>
+         <pins_profile>
+            <processor_version>0.0.0</processor_version>
+            <pin_labels>
+               <pin_label pin_num="137" pin_signal="PTA0" label="PWMC_LS" identifier="PWMC_LS"/>
+               <pin_label pin_num="135" pin_signal="PTA1" label="PWMC_HS" identifier="PWMC_HS"/>
+               <pin_label pin_num="124" pin_signal="PTA2" label="PWMB_HS" identifier="PWMB_HS"/>
+               <pin_label pin_num="123" pin_signal="PTA3" label="PWMB_LS" identifier="PWMB_LS"/>
+               <pin_label pin_num="32" pin_signal="PTA29" label="LED_RED" identifier="led_red;LED_RED"/>
+               <pin_label pin_num="33" pin_signal="PTA30" label="LED_GREEN" identifier="led_green;D13_GREEN;LED_GREEN"/>
+               <pin_label pin_num="39" pin_signal="PTA31" label="LED_BLUE" identifier="led_blue;LED_BLUE"/>
+               <pin_label pin_num="117" pin_signal="PTB12" label="GD3000_EN" identifier="GD_EN;GD3000_EN"/>
+               <pin_label pin_num="116" pin_signal="PTB13" label="GD3000_RST" identifier="GD_RST;GD3000_RST"/>
+               <pin_label pin_num="114" pin_signal="PTB14" label="GD3000_CLK" identifier="CLK;GD3000_CLK"/>
+               <pin_label pin_num="113" pin_signal="PTB15" label="GD3000_SIN" identifier="SIN;GD3000_SIN"/>
+               <pin_label pin_num="112" pin_signal="PTB16" label="GD3000_SOUT" identifier="SOUT;GD3000_SOUT"/>
+               <pin_label pin_num="110" pin_signal="PTB17" label="GD3000_CS" identifier="GD_CS;GD3000_CS"/>
+               <pin_label pin_num="42" pin_signal="PTB18" label="TST_TGMX_O9_B18" identifier="trg_out_b18;TST_TGMX_O9_B18"/>
+               <pin_label pin_num="43" pin_signal="PTB19" label="BTN_DEC_SW6" identifier="SW1_DEC;BTN_DEC_SW6"/>
+               <pin_label pin_num="44" pin_signal="PTB20" label="TST_GPIO_B20" identifier="speed_loop;TST_GPIO_B20"/>
+               <pin_label pin_num="45" pin_signal="PTB21" label="TST_TGMX_O12_B21" identifier="trg_out_b21;TST_TGMX_O12_B21"/>
+               <pin_label pin_num="73" pin_signal="PTB26" label="BTN_INC_SW5" identifier="SW0_INC;BTN_INC_SW5"/>
+               <pin_label pin_num="140" pin_signal="PTC7" label="GD3000_INT" identifier="GD_INT;GD3000_INT"/>
+               <pin_label pin_num="88" pin_signal="PTC24" label="TST_GPIO_C24" identifier="TEST_PIN;TST_GPIO_C24"/>
+               <pin_label pin_num="121" pin_signal="PTD2" label="PWMA_HS" identifier="PWMA_HS"/>
+               <pin_label pin_num="120" pin_signal="PTD3" label="PWMA_LS" identifier="PWMA_LS"/>
+               <pin_label pin_num="2" pin_signal="PTA19" label="ENC_PHA" identifier="ENC_PHA"/>
+               <pin_label pin_num="3" pin_signal="PTA20" label="ENC_PHB" identifier="ENC_PHB"/>
+               <pin_label pin_num="145" pin_signal="PTA15" label="FMSTR_RX" identifier="FMSTR_RX"/>
+               <pin_label pin_num="143" pin_signal="PTA16" label="FMSTR_TX" identifier="FMSTR_TX"/>
+               <pin_label pin_num="155" pin_signal="PTA13" label="PHA_I" identifier="PHA_I"/>
+               <pin_label pin_num="172" pin_signal="PTA8" label="PHB_I" identifier="PHB_I"/>
+               <pin_label pin_num="8" pin_signal="PTD0" label="DCB_V" identifier="DCB_V"/>
+            </pin_labels>
+         </pins_profile>
+         <functions_list>
+            <function name="PortContainer_0_BOARD_InitPeripherals">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>true</callFromInitBoot>
+                  <coreID>M7_0</coreID>
+               </options>
+               <dependencies>
+                  <dependency resourceType="SWComponent" resourceId="platform.driver.pins" description="Pins initialization requires the PINS Driver in the project." problem_level="2" source="Pins:PortContainer_0_BOARD_InitPeripherals">
+                     <feature name="enabled" evaluation="equal" configuration="M7_0">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <pins>
+                  <pin peripheral="LCU0" signal="lcu0_out4" pin_num="137" pin_signal="PTA0"/>
+                  <pin peripheral="LCU0" signal="lcu0_out5" pin_num="135" pin_signal="PTA1"/>
+                  <pin peripheral="LCU0" signal="lcu0_out3" pin_num="124" pin_signal="PTA2"/>
+                  <pin peripheral="LCU0" signal="lcu0_out2" pin_num="123" pin_signal="PTA3"/>
+                  <pin peripheral="LPUART6" signal="lpuart6_rx" pin_num="145" pin_signal="PTA15"/>
+                  <pin peripheral="LPUART6" signal="lpuart6_tx" pin_num="143" pin_signal="PTA16">
+                     <pin_features>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="SIUL2" signal="gpio, 29" pin_num="32" pin_signal="PTA29">
+                     <pin_features>
+                        <pin_feature name="identifier" value="LED_RED"/>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="SIUL2" signal="gpio, 30" pin_num="33" pin_signal="PTA30">
+                     <pin_features>
+                        <pin_feature name="identifier" value="LED_GREEN"/>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="SIUL2" signal="gpio, 31" pin_num="39" pin_signal="PTA31">
+                     <pin_features>
+                        <pin_feature name="identifier" value="LED_BLUE"/>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="SIUL2" signal="gpio, 44" pin_num="117" pin_signal="PTB12">
+                     <pin_features>
+                        <pin_feature name="identifier" value="GD3000_EN"/>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="SIUL2" signal="gpio, 45" pin_num="116" pin_signal="PTB13">
+                     <pin_features>
+                        <pin_feature name="identifier" value="GD3000_RST"/>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="LPSPI1" signal="lpspi1_sck" pin_num="114" pin_signal="PTB14">
+                     <pin_features>
+                        <pin_feature name="identifier" value="GD3000_CLK"/>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="LPSPI1" signal="lpspi1_sin" pin_num="113" pin_signal="PTB15">
+                     <pin_features>
+                        <pin_feature name="identifier" value="GD3000_SIN"/>
+                        <pin_feature name="direction" value="INPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="LPSPI1" signal="lpspi1_sout" pin_num="112" pin_signal="PTB16">
+                     <pin_features>
+                        <pin_feature name="identifier" value="GD3000_SOUT"/>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="SIUL2" signal="gpio, 49" pin_num="110" pin_signal="PTB17">
+                     <pin_features>
+                        <pin_feature name="identifier" value="GD3000_CS"/>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="TRGMUX" signal="trgmux_out9" pin_num="42" pin_signal="PTB18">
+                     <pin_features>
+                        <pin_feature name="identifier" value="TST_TGMX_O9_B18"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="SIUL2" signal="gpio, 51" pin_num="43" pin_signal="PTB19">
+                     <pin_features>
+                        <pin_feature name="identifier" value="BTN_DEC_SW6"/>
+                        <pin_feature name="direction" value="INPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="SIUL2" signal="gpio, 52" pin_num="44" pin_signal="PTB20">
+                     <pin_features>
+                        <pin_feature name="identifier" value="TST_GPIO_B20"/>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="TRGMUX" signal="trgmux_out12" pin_num="45" pin_signal="PTB21">
+                     <pin_features>
+                        <pin_feature name="identifier" value="TST_TGMX_O12_B21"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="SIUL2" signal="gpio, 58" pin_num="73" pin_signal="PTB26">
+                     <pin_features>
+                        <pin_feature name="identifier" value="BTN_INC_SW5"/>
+                        <pin_feature name="direction" value="INPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="SIUL2" signal="eirq, 7" pin_num="140" pin_signal="PTC7">
+                     <pin_features>
+                        <pin_feature name="identifier" value="GD3000_INT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="SIUL2" signal="gpio, 88" pin_num="88" pin_signal="PTC24">
+                     <pin_features>
+                        <pin_feature name="identifier" value="TST_GPIO_C24"/>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="LCU0" signal="lcu0_out1" pin_num="121" pin_signal="PTD2"/>
+                  <pin peripheral="LCU0" signal="lcu0_out0" pin_num="120" pin_signal="PTD3"/>
+                  <pin peripheral="TRGMUX" signal="trgmux_in13" pin_num="2" pin_signal="PTA19"/>
+                  <pin peripheral="TRGMUX" signal="trgmux_in14" pin_num="3" pin_signal="PTA20"/>
+                  <pin peripheral="ADC1" signal="adc1_p1" pin_num="155" pin_signal="PTA13"/>
+                  <pin peripheral="ADC0" signal="adc0_p2" pin_num="172" pin_signal="PTA8"/>
+                  <pin peripheral="ADC0" signal="adc0_p1" pin_num="8" pin_signal="PTD0"/>
+               </pins>
+            </function>
+         </functions_list>
+      </pins>
+      <clocks name="Clocks" version="17.0" enabled="true" update_project_code="true">
+         <generated_project_files>
+            <file path="generate/include/Clock_Ip_Cfg.h" update_enabled="true"/>
+            <file path="generate/include/Clock_Ip_Cfg_Defines.h" update_enabled="true"/>
+            <file path="generate/src/Clock_Ip_Cfg.c" update_enabled="true"/>
+         </generated_project_files>
+         <clocks_profile>
+            <processor_version>0.0.0</processor_version>
+         </clocks_profile>
+         <clock_configurations>
+            <clock_configuration name="ClockConfig0" id_prefix="" prefix_user_defined="false">
+               <description></description>
+               <options/>
+               <dependencies>
+                  <dependency resourceType="PinSignal" resourceId="FXOSC_CLK.EXTAL" description="&apos;External pin&apos; (Pins tool id: FXOSC_CLK.EXTAL, Clocks tool id: FXOSC_CLK.EXTAL) needs to be routed" problem_level="1" source="Clocks:ClockConfig0">
+                     <feature name="routed" evaluation="">
+                        <data>true</data>
+                     </feature>
+                     <feature name="direction" evaluation="">
+                        <data>INPUT</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PinSignal" resourceId="FXOSC_CLK.XTAL" description="&apos;External pin&apos; (Pins tool id: FXOSC_CLK.XTAL, Clocks tool id: FXOSC_CLK.XTAL) needs to be routed" problem_level="1" source="Clocks:ClockConfig0">
+                     <feature name="routed" evaluation="">
+                        <data>true</data>
+                     </feature>
+                     <feature name="direction" evaluation="">
+                        <data>OUTPUT</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PinSignal" resourceId="SXOSC_CLK.EXTAL" description="&apos;External pin&apos; (Pins tool id: SXOSC_CLK.EXTAL, Clocks tool id: SXOSC_CLK.EXTAL) needs to be routed" problem_level="1" source="Clocks:ClockConfig0">
+                     <feature name="routed" evaluation="">
+                        <data>true</data>
+                     </feature>
+                     <feature name="direction" evaluation="">
+                        <data>INPUT</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PinSignal" resourceId="SXOSC_CLK.XTAL" description="&apos;External pin&apos; (Pins tool id: SXOSC_CLK.XTAL, Clocks tool id: SXOSC_CLK.XTAL) needs to be routed" problem_level="1" source="Clocks:ClockConfig0">
+                     <feature name="routed" evaluation="">
+                        <data>true</data>
+                     </feature>
+                     <feature name="direction" evaluation="">
+                        <data>OUTPUT</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="SWComponent" resourceId="platform.driver.clock" description="Clocks initialization requires the CLOCK Driver in the project." problem_level="2" source="Clocks:ClockConfig0">
+                     <feature name="enabled" evaluation="equal" configuration="M7_0">
+                        <data>true</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <clock_sources>
+                  <clock_source id="FXOSC_CLK.FXOSC_CLK.outFreq" value="16 MHz" locked="false" enabled="true"/>
+                  <clock_source id="SXOSC_CLK.SXOSC_CLK.outFreq" value="32.768 kHz" locked="false" enabled="true"/>
+               </clock_sources>
+               <clock_outputs>
+                  <clock_output id="ADC0_CLK.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="ADC1_CLK.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="AIPS_PLAT_CLK.outFreq" value="60 MHz" locked="false" accuracy=""/>
+                  <clock_output id="AIPS_SLOW_CLK.outFreq" value="30 MHz" locked="false" accuracy=""/>
+                  <clock_output id="BCTU0_CLK.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="CLKOUT_RUN_CLK.outFreq" value="8 MHz" locked="false" accuracy=""/>
+                  <clock_output id="CLKOUT_STANDBY_CLK.outFreq" value="24 MHz" locked="false" accuracy=""/>
+                  <clock_output id="CMP0_CLK.outFreq" value="30 MHz" locked="false" accuracy=""/>
+                  <clock_output id="CMP1_CLK.outFreq" value="30 MHz" locked="false" accuracy=""/>
+                  <clock_output id="CORE_CLK.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="CRC0_CLK.outFreq" value="60 MHz" locked="false" accuracy=""/>
+                  <clock_output id="DCM0_CLK.outFreq" value="30 MHz" locked="false" accuracy=""/>
+                  <clock_output id="DCM_CLK.outFreq" value="30 MHz" locked="false" accuracy=""/>
+                  <clock_output id="DMAMUX0_CLK.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="DMAMUX1_CLK.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EDMA0_CLK.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EDMA0_TCD0_CLK.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EDMA0_TCD10_CLK.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EDMA0_TCD11_CLK.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EDMA0_TCD1_CLK.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EDMA0_TCD2_CLK.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EDMA0_TCD3_CLK.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EDMA0_TCD4_CLK.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EDMA0_TCD5_CLK.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EDMA0_TCD6_CLK.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EDMA0_TCD7_CLK.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EDMA0_TCD8_CLK.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EDMA0_TCD9_CLK.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EIM0_CLK.outFreq" value="60 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EMIOS0_CLK.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EMIOS1_CLK.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="ERM0_CLK.outFreq" value="30 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FIRCOUT.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FLEXCAN0_CLK.outFreq" value="24 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FLEXCAN1_CLK.outFreq" value="24 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FLEXCAN2_CLK.outFreq" value="24 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FLEXCAN3_CLK.outFreq" value="24 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FLEXCAN4_CLK.outFreq" value="24 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FLEXCAN5_CLK.outFreq" value="24 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FLEXCANA_CLK.outFreq" value="24 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FLEXCANB_CLK.outFreq" value="24 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FLEXIO0_CLK.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FXOSCOUT.outFreq" value="16 MHz" locked="false" accuracy=""/>
+                  <clock_output id="HSE_CLK.outFreq" value="60 MHz" locked="false" accuracy=""/>
+                  <clock_output id="INTM_CLK.outFreq" value="60 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LCU0_CLK.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LCU1_CLK.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPI2C0_CLK.outFreq" value="30 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPI2C1_CLK.outFreq" value="30 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPSPI0_CLK.outFreq" value="60 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPSPI1_CLK.outFreq" value="30 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPSPI2_CLK.outFreq" value="30 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPSPI3_CLK.outFreq" value="30 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPUART0_CLK.outFreq" value="60 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPUART1_CLK.outFreq" value="30 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPUART2_CLK.outFreq" value="30 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPUART3_CLK.outFreq" value="30 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPUART4_CLK.outFreq" value="30 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPUART5_CLK.outFreq" value="30 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPUART6_CLK.outFreq" value="30 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPUART7_CLK.outFreq" value="30 MHz" locked="false" accuracy=""/>
+                  <clock_output id="MSCM_CLK.outFreq" value="60 MHz" locked="false" accuracy=""/>
+                  <clock_output id="PIT0_CLK.outFreq" value="30 MHz" locked="false" accuracy=""/>
+                  <clock_output id="PIT1_CLK.outFreq" value="30 MHz" locked="false" accuracy=""/>
+                  <clock_output id="PLL_PHI0.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="PLL_PHI1.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="RTC0_CLK.outFreq" value="32.768 kHz" locked="false" accuracy=""/>
+                  <clock_output id="RTC_CLK.outFreq" value="32.768 kHz" locked="false" accuracy=""/>
+                  <clock_output id="SCS_CLK.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SIRCOUT.outFreq" value="32 kHz" locked="false" accuracy=""/>
+                  <clock_output id="SIUL2_CLK.outFreq" value="30 MHz" locked="false" accuracy=""/>
+                  <clock_output id="STCU0_CLK.outFreq" value="30 MHz" locked="false" accuracy=""/>
+                  <clock_output id="STM0_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="STMA_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SWT0_CLK.outFreq" value="32 kHz" locked="false" accuracy=""/>
+                  <clock_output id="SXOSCOUT.outFreq" value="32.768 kHz" locked="false" accuracy=""/>
+                  <clock_output id="TEMPSENSE_CLK.outFreq" value="120 MHz" locked="false" accuracy=""/>
+                  <clock_output id="TRACE_CLK.outFreq" value="24 MHz" locked="false" accuracy=""/>
+                  <clock_output id="TRGMUX0_CLK.outFreq" value="30 MHz" locked="false" accuracy=""/>
+                  <clock_output id="TSENSE0_CLK.outFreq" value="30 MHz" locked="false" accuracy=""/>
+                  <clock_output id="WKPU0_CLK.outFreq" value="30 MHz" locked="false" accuracy=""/>
+               </clock_outputs>
+               <clock_settings>
+                  <setting id="ClockGetFrequencyAPI" value="Enabled" locked="false"/>
+                  <setting id="CORE_MFD.scale" value="120" locked="true"/>
+                  <setting id="CORE_PLLODIV_0_DE" value="Enabled" locked="false"/>
+                  <setting id="CORE_PLLODIV_1_DE" value="Enabled" locked="false"/>
+                  <setting id="CORE_PLL_PD" value="Power_up" locked="false"/>
+                  <setting id="FXOSC_PM" value="Crystal_mode" locked="false"/>
+                  <setting id="MC_CGM_MUX_0.sel" value="PHI0" locked="false"/>
+                  <setting id="MC_CGM_MUX_0_DIV0.scale" value="1" locked="true"/>
+                  <setting id="MC_CGM_MUX_0_DIV0_Trigger" value="Common" locked="false"/>
+                  <setting id="MC_CGM_MUX_0_DIV1.scale" value="2" locked="true"/>
+                  <setting id="MC_CGM_MUX_0_DIV1_Trigger" value="Common" locked="false"/>
+                  <setting id="MC_CGM_MUX_0_DIV2.scale" value="4" locked="true"/>
+                  <setting id="MC_CGM_MUX_0_DIV2_Trigger" value="Common" locked="false"/>
+                  <setting id="MC_CGM_MUX_0_DIV3.scale" value="2" locked="true"/>
+                  <setting id="MC_CGM_MUX_0_DIV3_Trigger" value="Common" locked="false"/>
+                  <setting id="MC_CGM_MUX_0_DIV4.scale" value="4" locked="true"/>
+                  <setting id="MC_CGM_MUX_0_DIV4_Trigger" value="Common" locked="false"/>
+                  <setting id="MC_CGM_MUX_6.sel" value="N/A" locked="false"/>
+                  <setting id="MC_CGM_MUX_6_DE0" value="Enabled" locked="false"/>
+                  <setting id="MC_CGM_MUX_6_DIV0.scale" value="2" locked="true"/>
+                  <setting id="MODULE_CLOCKS.MC_CGM_AUX3_DIV0.scale" value="2" locked="true"/>
+                  <setting id="MODULE_CLOCKS.MC_CGM_AUX4_DIV0.scale" value="2" locked="true"/>
+                  <setting id="PHI0.scale" value="2" locked="true"/>
+                  <setting id="PHI1.scale" value="5" locked="true"/>
+                  <setting id="PLL_PREDIV.scale" value="2" locked="true"/>
+                  <setting id="POSTDIV.scale" value="4" locked="true"/>
+                  <setting id="SXOSC_PM" value="Crystal_mode" locked="false"/>
+               </clock_settings>
+               <called_from_default_init>true</called_from_default_init>
+            </clock_configuration>
+         </clock_configurations>
+      </clocks>
+      <ddr name="DDR" version="1.0" enabled="false" update_project_code="true">
+         <generated_project_files/>
+         <components/>
+      </ddr>
+      <dcd name="DCD" version="1.0" enabled="false" update_project_code="true" isSelfTest="false">
+         <generated_project_files/>
+         <dcdx_profile>
+            <processor_version>N/A</processor_version>
+         </dcdx_profile>
+         <dcdx_configurations/>
+      </dcd>
+      <ivt name="IVT" version="1.0" enabled="false" update_project_code="true">
+         <generated_project_files/>
+         <ivt_profile>
+            <processor_version>N/A</processor_version>
+         </ivt_profile>
+      </ivt>
+      <quadspi name="QuadSPI" version="1.0" enabled="false" update_project_code="true">
+         <generated_project_files/>
+         <quadspi_profile>
+            <processor_version>N/A</processor_version>
+         </quadspi_profile>
+      </quadspi>
+      <efuse name="eFUSE" version="1.0" enabled="false" update_project_code="true">
+         <efuse_profile>
+            <processor_version>N/A</processor_version>
+         </efuse_profile>
+      </efuse>
+      <gtm name="GTM" version="1.0" enabled="false" update_project_code="true">
+         <generated_project_files/>
+         <gtm_profile>
+            <processor_version>N/A</processor_version>
+         </gtm_profile>
+      </gtm>
+      <ice name="ICE" version="1.0" enabled="false" update_project_code="true">
+         <ice_profile>
+            <processor_version>N/A</processor_version>
+         </ice_profile>
+      </ice>
+      <periphs name="Peripherals" version="15.0" enabled="true" update_project_code="true">
+         <dependencies>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.osif" description="osif is not found in the toolchain/IDE project. The project will not compile!" problem_level="2" source="Peripherals">
+               <feature name="enabled" evaluation="equal">
+                  <data type="Boolean">true</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.osif" description="An unsupported version of the osif in the toolchain/IDE project. Required: ${required_value}, actual: ${actual_value}. The project might not compile correctly." problem_level="1" source="Peripherals">
+               <feature name="version" evaluation="equivalent">
+                  <data type="Version">1.0.0</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.siul2_port" description="siul2_port is not found in the toolchain/IDE project. The project will not compile!" problem_level="2" source="Peripherals">
+               <feature name="enabled" evaluation="equal">
+                  <data type="Boolean">true</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.siul2_port" description="An unsupported version of the siul2_port in the toolchain/IDE project. Required: ${required_value}, actual: ${actual_value}. The project might not compile correctly." problem_level="1" source="Peripherals">
+               <feature name="version" evaluation="equivalent">
+                  <data type="Version">1.0.0</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.adc_sar" description="adc_sar is not found in the toolchain/IDE project. The project will not compile!" problem_level="2" source="Peripherals">
+               <feature name="enabled" evaluation="equal">
+                  <data type="Boolean">true</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.adc_sar" description="An unsupported version of the adc_sar in the toolchain/IDE project. Required: ${required_value}, actual: ${actual_value}. The project might not compile correctly." problem_level="1" source="Peripherals">
+               <feature name="version" evaluation="equivalent">
+                  <data type="Version">1.0.0</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.bctu" description="bctu is not found in the toolchain/IDE project. The project will not compile!" problem_level="2" source="Peripherals">
+               <feature name="enabled" evaluation="equal">
+                  <data type="Boolean">true</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.bctu" description="An unsupported version of the bctu in the toolchain/IDE project. Required: ${required_value}, actual: ${actual_value}. The project might not compile correctly." problem_level="1" source="Peripherals">
+               <feature name="version" evaluation="equivalent">
+                  <data type="Version">1.0.0</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.emios_icu" description="Emios_Icu is not found in the toolchain/IDE project. The project will not compile!" problem_level="2" source="Peripherals">
+               <feature name="enabled" evaluation="equal">
+                  <data type="Boolean">true</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.emios_icu" description="An unsupported version of the Emios_Icu in the toolchain/IDE project. Required: ${required_value}, actual: ${actual_value}. The project might not compile correctly." problem_level="1" source="Peripherals">
+               <feature name="version" evaluation="equivalent">
+                  <data type="Version">1.0.0</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.emios_mcl" description="emios_mcl is not found in the toolchain/IDE project. The project will not compile!" problem_level="2" source="Peripherals">
+               <feature name="enabled" evaluation="equal">
+                  <data type="Boolean">true</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.emios_mcl" description="An unsupported version of the emios_mcl in the toolchain/IDE project. Required: ${required_value}, actual: ${actual_value}. The project might not compile correctly." problem_level="1" source="Peripherals">
+               <feature name="version" evaluation="equivalent">
+                  <data type="Version">1.0.0</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.emios_pwm" description="emios_pwm is not found in the toolchain/IDE project. The project will not compile!" problem_level="2" source="Peripherals">
+               <feature name="enabled" evaluation="equal">
+                  <data type="Boolean">true</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.emios_pwm" description="An unsupported version of the emios_pwm in the toolchain/IDE project. Required: ${required_value}, actual: ${actual_value}. The project might not compile correctly." problem_level="1" source="Peripherals">
+               <feature name="version" evaluation="equivalent">
+                  <data type="Version">1.0.0</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.IntCtrl_Ip" description="IntCtrl_Ip is not found in the toolchain/IDE project. The project will not compile!" problem_level="2" source="Peripherals">
+               <feature name="enabled" evaluation="equal">
+                  <data type="Boolean">true</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.IntCtrl_Ip" description="An unsupported version of the IntCtrl_Ip in the toolchain/IDE project. Required: ${required_value}, actual: ${actual_value}. The project might not compile correctly." problem_level="1" source="Peripherals">
+               <feature name="version" evaluation="equivalent">
+                  <data type="Version">1.0.0</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.lcu" description="lcu is not found in the toolchain/IDE project. The project will not compile!" problem_level="2" source="Peripherals">
+               <feature name="enabled" evaluation="equal">
+                  <data type="Boolean">true</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.lcu" description="An unsupported version of the lcu in the toolchain/IDE project. Required: ${required_value}, actual: ${actual_value}. The project might not compile correctly." problem_level="1" source="Peripherals">
+               <feature name="version" evaluation="equivalent">
+                  <data type="Version">1.0.0</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.lpspi" description="Lpspi is not found in the toolchain/IDE project. The project will not compile!" problem_level="2" source="Peripherals">
+               <feature name="enabled" evaluation="equal">
+                  <data type="Boolean">true</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.lpspi" description="An unsupported version of the Lpspi in the toolchain/IDE project. Required: ${required_value}, actual: ${actual_value}. The project might not compile correctly." problem_level="1" source="Peripherals">
+               <feature name="version" evaluation="equivalent">
+                  <data type="Version">1.0.0</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.lpuart_uart" description="Lpuart_Uart is not found in the toolchain/IDE project. The project will not compile!" problem_level="2" source="Peripherals">
+               <feature name="enabled" evaluation="equal">
+                  <data type="Boolean">true</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.lpuart_uart" description="An unsupported version of the Lpuart_Uart in the toolchain/IDE project. Required: ${required_value}, actual: ${actual_value}. The project might not compile correctly." problem_level="1" source="Peripherals">
+               <feature name="version" evaluation="equivalent">
+                  <data type="Version">1.0.0</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.siul2_dio" description="siul2_dio is not found in the toolchain/IDE project. The project will not compile!" problem_level="2" source="Peripherals">
+               <feature name="enabled" evaluation="equal">
+                  <data type="Boolean">true</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.siul2_dio" description="An unsupported version of the siul2_dio in the toolchain/IDE project. Required: ${required_value}, actual: ${actual_value}. The project might not compile correctly." problem_level="1" source="Peripherals">
+               <feature name="version" evaluation="equivalent">
+                  <data type="Version">1.0.0</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.siul2_icu" description="Siul2_Icu is not found in the toolchain/IDE project. The project will not compile!" problem_level="2" source="Peripherals">
+               <feature name="enabled" evaluation="equal">
+                  <data type="Boolean">true</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.siul2_icu" description="An unsupported version of the Siul2_Icu in the toolchain/IDE project. Required: ${required_value}, actual: ${actual_value}. The project might not compile correctly." problem_level="1" source="Peripherals">
+               <feature name="version" evaluation="equivalent">
+                  <data type="Version">1.0.0</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.trgmux" description="trgmux is not found in the toolchain/IDE project. The project will not compile!" problem_level="2" source="Peripherals">
+               <feature name="enabled" evaluation="equal">
+                  <data type="Boolean">true</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.trgmux" description="An unsupported version of the trgmux in the toolchain/IDE project. Required: ${required_value}, actual: ${actual_value}. The project might not compile correctly." problem_level="1" source="Peripherals">
+               <feature name="version" evaluation="equivalent">
+                  <data type="Version">1.0.0</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.middleware.ammclib" description="ammclib is not found in the toolchain/IDE project. The project will not compile!" problem_level="2" source="Peripherals">
+               <feature name="enabled" evaluation="equal">
+                  <data type="Boolean">true</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.middleware.ammclib" description="An unsupported version of the ammclib in the toolchain/IDE project. Required: ${required_value}, actual: ${actual_value}. The project might not compile correctly." problem_level="1" source="Peripherals">
+               <feature name="version" evaluation="equivalent">
+                  <data type="Version">1.1.43</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="Tool" resourceId="Clocks" description="The Clocks tool is required by the Peripherals tool, but it is disabled." problem_level="2" source="Peripherals">
+               <feature name="enabled" evaluation="equal">
+                  <data>true</data>
+               </feature>
+            </dependency>
+         </dependencies>
+         <generated_project_files>
+            <file path="generate/include/Adc_Sar_Ip_Cfg.h" update_enabled="true"/>
+            <file path="generate/include/Adc_Sar_Ip_CfgDefines.h" update_enabled="true"/>
+            <file path="generate/include/Adc_Sar_Ip_PBcfg.h" update_enabled="true"/>
+            <file path="generate/include/Bctu_Ip_Cfg.h" update_enabled="true"/>
+            <file path="generate/include/Bctu_Ip_CfgDefines.h" update_enabled="true"/>
+            <file path="generate/include/Bctu_Ip_PBcfg.h" update_enabled="true"/>
+            <file path="generate/include/DeviceDefinition.h" update_enabled="true"/>
+            <file path="generate/include/Emios_Icu_Ip_Cfg.h" update_enabled="true"/>
+            <file path="generate/include/Emios_Icu_Ip_Defines.h" update_enabled="true"/>
+            <file path="generate/include/Emios_Icu_Ip_SA_PBcfg.h" update_enabled="true"/>
+            <file path="generate/include/Emios_Mcl_Ip_Cfg.h" update_enabled="true"/>
+            <file path="generate/include/Emios_Mcl_Ip_Cfg_Defines.h" update_enabled="true"/>
+            <file path="generate/include/Emios_Mcl_Ip_Cfg_DeviceRegisters.h" update_enabled="true"/>
+            <file path="generate/include/Emios_Mcl_Ip_Sa_PBcfg.h" update_enabled="true"/>
+            <file path="generate/include/Emios_Pwm_Ip_Cfg.h" update_enabled="true"/>
+            <file path="generate/include/Emios_Pwm_Ip_CfgDefines.h" update_enabled="true"/>
+            <file path="generate/include/Emios_Pwm_Ip_Sa_PBcfg.h" update_enabled="true"/>
+            <file path="generate/include/IntCtrl_Ip_Cfg.h" update_enabled="true"/>
+            <file path="generate/include/IntCtrl_Ip_CfgDefines.h" update_enabled="true"/>
+            <file path="generate/include/Lcu_Ip_Cfg.h" update_enabled="true"/>
+            <file path="generate/include/Lcu_Ip_Cfg_Defines.h" update_enabled="true"/>
+            <file path="generate/include/Lcu_Ip_Features.h" update_enabled="true"/>
+            <file path="generate/include/Lcu_Ip_Regs.h" update_enabled="true"/>
+            <file path="generate/include/Lcu_Ip_Sa_PBcfg.h" update_enabled="true"/>
+            <file path="generate/include/Lpspi_Ip_Cfg.h" update_enabled="true"/>
+            <file path="generate/include/Lpspi_Ip_Sa_PBcfg.h" update_enabled="true"/>
+            <file path="generate/include/Lpuart_Uart_Ip_Cfg.h" update_enabled="true"/>
+            <file path="generate/include/Lpuart_Uart_Ip_Defines.h" update_enabled="true"/>
+            <file path="generate/include/Lpuart_Uart_Ip_Sa_PBcfg.h" update_enabled="true"/>
+            <file path="generate/include/OsIf_ArchCfg.h" update_enabled="true"/>
+            <file path="generate/include/OsIf_Cfg.h" update_enabled="true"/>
+            <file path="generate/include/SWLIBS_Config.h" update_enabled="true"/>
+            <file path="generate/include/Siul2_Dio_Ip_Cfg.h" update_enabled="true"/>
+            <file path="generate/include/Siul2_Icu_Ip_Cfg.h" update_enabled="true"/>
+            <file path="generate/include/Siul2_Icu_Ip_Defines.h" update_enabled="true"/>
+            <file path="generate/include/Siul2_Icu_Ip_SA_PBcfg.h" update_enabled="true"/>
+            <file path="generate/include/Siul2_Port_Ip_Defines.h" update_enabled="true"/>
+            <file path="generate/include/Soc_Ips.h" update_enabled="true"/>
+            <file path="generate/include/Trgmux_Ip_Cfg.h" update_enabled="true"/>
+            <file path="generate/include/Trgmux_Ip_Cfg_Defines.h" update_enabled="true"/>
+            <file path="generate/include/Trgmux_Ip_Cfg_DeviceRegisters.h" update_enabled="true"/>
+            <file path="generate/include/Trgmux_Ip_Sa_PBcfg.h" update_enabled="true"/>
+            <file path="generate/include/modules.h" update_enabled="true"/>
+            <file path="generate/src/Adc_Sar_Ip_PBcfg.c" update_enabled="true"/>
+            <file path="generate/src/Bctu_Ip_PBcfg.c" update_enabled="true"/>
+            <file path="generate/src/Emios_Icu_Ip_SA_PBcfg.c" update_enabled="true"/>
+            <file path="generate/src/Emios_Mcl_Ip_Sa_PBcfg.c" update_enabled="true"/>
+            <file path="generate/src/Emios_Pwm_Ip_Sa_PBcfg.c" update_enabled="true"/>
+            <file path="generate/src/IntCtrl_Ip_Cfg.c" update_enabled="true"/>
+            <file path="generate/src/Lcu_Ip_Cfg.c" update_enabled="true"/>
+            <file path="generate/src/Lcu_Ip_Sa_PBcfg.c" update_enabled="true"/>
+            <file path="generate/src/Lpspi_Ip_Sa_PBcfg.c" update_enabled="true"/>
+            <file path="generate/src/Lpuart_Uart_Ip_Sa_PBcfg.c" update_enabled="true"/>
+            <file path="generate/src/OsIf_Cfg.c" update_enabled="true"/>
+            <file path="generate/src/Siul2_Icu_Ip_SA_PBcfg.c" update_enabled="true"/>
+            <file path="generate/src/Trgmux_Ip_Cfg.c" update_enabled="true"/>
+            <file path="generate/src/Trgmux_Ip_Sa_PBcfg.c" update_enabled="true"/>
+         </generated_project_files>
+         <peripherals_profile>
+            <processor_version>0.0.0</processor_version>
+         </peripherals_profile>
+         <functional_groups>
+            <functional_group name="BOARD_InitPeripherals" uuid="343d8c09-29ab-44df-a8a2-0e35bf16a60f" called_from_default_init="true" id_prefix="" core="M7_0">
+               <description></description>
+               <options/>
+               <dependencies/>
+               <instances>
+                  <instance name="BaseNXP" uuid="a62e3129-c7ba-41d9-97d3-6cb575e7e56b" type="BaseNXP" type_id="Base" mode="general" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
+                     <config_set name="BaseNXP">
+                        <setting name="Name" value="BaseNXP"/>
+                        <struct name="ConfigTimeSupport">
+                           <setting name="POST_BUILD_VARIANT_USED" value="false"/>
+                           <setting name="IMPLEMENTATION_CONFIG_VARIANT" value="VARIANT-PRE-COMPILE"/>
+                        </struct>
+                        <struct name="OsIfGeneral">
+                           <setting name="Name" value="OsIfGeneral"/>
+                           <setting name="OsIfMulticoreSupport" value="false"/>
+                           <setting name="OsIfEnableUserModeSupport" value="false"/>
+                           <setting name="OsIfDevErrorDetect" value="false"/>
+                           <setting name="OsIfUseSystemTimer" value="false"/>
+                           <setting name="OsIfUseCustomTimer" value="false"/>
+                           <setting name="OsIfUseGetUserId" value="GET_CORE_ID"/>
+                           <setting name="OsIfInstanceId" value="255"/>
+                           <setting name="OsIfGetPhysicalCoreIdEnable" value="false"/>
+                           <setting name="OsIfSoftwareSemaphoredEnable" value="false"/>
+                           <struct name="OsIfOperatingSystemType">
+                              <setting name="Name" value="OsIfOperatingSystemType"/>
+                              <setting name="Choice" value="OsIfBaremetalType"/>
+                              <struct name="OsIfBaremetalType" quick_selection="Default">
+                                 <setting name="Name" value="OsIfOperatingSystemType"/>
+                              </struct>
+                           </struct>
+                           <array name="OsIfEcucPartitionRef"/>
+                           <array name="OsIfCounterConfig"/>
+                        </struct>
+                        <struct name="CommonPublishedInformation" quick_selection="Default">
+                           <setting name="Name" value="CommonPublishedInformation"/>
+                           <setting name="ModuleId" value="0"/>
+                           <setting name="VendorId" value="43"/>
+                           <array name="VendorApiInfix"/>
+                           <setting name="ArReleaseMajorVersion" value="4"/>
+                           <setting name="ArReleaseMinorVersion" value="7"/>
+                           <setting name="ArReleaseRevisionVersion" value="0"/>
+                           <setting name="SwMajorVersion" value="5"/>
+                           <setting name="SwMinorVersion" value="0"/>
+                           <setting name="SwPatchVersion" value="0"/>
+                        </struct>
+                     </config_set>
+                  </instance>
+                  <instance name="Siul2_Port" uuid="cd770de1-d89a-4391-929f-0f7a109ac1c8" type="Siul2_Port" type_id="Siul2_Port" mode="ip" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
+                     <config_set name="Siul2_Port">
+                        <setting name="Name" value="Siul2_Port"/>
+                        <struct name="ConfigTimeSupport">
+                           <setting name="POST_BUILD_VARIANT_USED" value="false"/>
+                           <setting name="IMPLEMENTATION_CONFIG_VARIANT" value="VARIANT-PRE-COMPILE"/>
+                        </struct>
+                        <struct name="PortGeneral">
+                           <setting name="Name" value="PortGeneral"/>
+                           <setting name="SIUL2PortIPDevErrorDetect" value="false"/>
+                           <setting name="PortEnableUserModeSupport" value="false"/>
+                        </struct>
+                        <struct name="PortConfigSet">
+                           <setting name="Name" value="PortConfigSet"/>
+                           <array name="PortContainer">
+                              <struct name="0">
+                                 <setting name="Name" value="PortContainer_0"/>
+                                 <array name="PortPin">
+                                    <struct name="0">
+                                       <setting name="Name" value="PortPin_0"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="1"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                    <struct name="1">
+                                       <setting name="Name" value="PortPin_1"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="2"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                    <struct name="2">
+                                       <setting name="Name" value="PortPin_2"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="3"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                    <struct name="3">
+                                       <setting name="Name" value="PortPin_3"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="4"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                    <struct name="4">
+                                       <setting name="Name" value="PortPin_4"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="5"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                    <struct name="5">
+                                       <setting name="Name" value="PortPin_5"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="6"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                    <struct name="6">
+                                       <setting name="Name" value="PortPin_6"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="7"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                    <struct name="7">
+                                       <setting name="Name" value="PortPin_7"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="8"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                    <struct name="8">
+                                       <setting name="Name" value="PortPin_8"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="9"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                    <struct name="9">
+                                       <setting name="Name" value="PortPin_9"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="10"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                    <struct name="10">
+                                       <setting name="Name" value="PortPin_10"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="11"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                    <struct name="11">
+                                       <setting name="Name" value="PortPin_11"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="12"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                    <struct name="12">
+                                       <setting name="Name" value="PortPin_12"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="13"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                    <struct name="13">
+                                       <setting name="Name" value="PortPin_13"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="14"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                    <struct name="14">
+                                       <setting name="Name" value="PortPin_14"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="15"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                    <struct name="15">
+                                       <setting name="Name" value="PortPin_15"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="16"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                    <struct name="16">
+                                       <setting name="Name" value="PortPin_16"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="17"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                    <struct name="17">
+                                       <setting name="Name" value="PortPin_17"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="18"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                    <struct name="18">
+                                       <setting name="Name" value="PortPin_18"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="19"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                    <struct name="19">
+                                       <setting name="Name" value="PortPin_19"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="20"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                    <struct name="20">
+                                       <setting name="Name" value="PortPin_20"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="21"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                    <struct name="21">
+                                       <setting name="Name" value="PortPin_21"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="22"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                    <struct name="22">
+                                       <setting name="Name" value="PortPin_22"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="23"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                    <struct name="23">
+                                       <setting name="Name" value="PortPin_23"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="24"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                    <struct name="24">
+                                       <setting name="Name" value="PortPin_24"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="25"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                    <struct name="25">
+                                       <setting name="Name" value="PortPin_25"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="26"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                    <struct name="26">
+                                       <setting name="Name" value="PortPin_26"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="27"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                    <struct name="27">
+                                       <setting name="Name" value="PortPin_27"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="28"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                    <struct name="28">
+                                       <setting name="Name" value="PortPin_28"/>
+                                       <setting name="PortPinPue" value="false"/>
+                                       <setting name="PortPinPus" value="false"/>
+                                       <setting name="PortPinSafeMode" value="false"/>
+                                       <setting name="PortPinDse" value="false"/>
+                                       <setting name="PortPinWithReadBack" value="false"/>
+                                       <setting name="PortPinPke" value="false"/>
+                                       <setting name="PortPinIfe" value="false"/>
+                                       <setting name="PortPinDirectionChangeable" value="true"/>
+                                       <setting name="PortPinModeChangeable" value="true"/>
+                                       <setting name="PortPinInvertControl" value="false"/>
+                                       <setting name="PortPinSiul2Instance" value="SIUL2_0"/>
+                                       <setting name="PortPinId" value="29"/>
+                                       <setting name="PortPinInitialMode" value="PORT_GPIO_MODE"/>
+                                    </struct>
+                                 </array>
+                              </struct>
+                           </array>
+                        </struct>
+                     </config_set>
+                  </instance>
+                  <instance name="Adc_Sar_Ip" uuid="b2aadbf1-55cd-4aa2-9bd2-587b48e89bf6" type="Adc_Sar_Ip" type_id="Adc_Sar_Ip" mode="ip" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
+                     <config_set name="Adc_Sar_Ip">
+                        <setting name="Name" value="Adc_Sar_Ip"/>
+                        <struct name="AdcSarGeneral">
+                           <setting name="Name" value="AdcSarGeneral"/>
+                           <setting name="AdcSarTimeoutMethod" value="OSIF_COUNTER_DUMMY"/>
+                           <setting name="AdcSarTimeoutVal" value="3000"/>
+                           <setting name="AdcSarIpDevErrorDetect" value="false"/>
+                           <setting name="AdcSarEnableUserModeSupport" value="false"/>
+                           <setting name="AdcSarEnableWatchdogApi" value="false"/>
+                           <setting name="AdcSarEnableSelfTestApi" value="false"/>
+                           <setting name="AdcSarEnableEoC" value="false"/>
+                           <setting name="AdcSarEnableAsyncCalibration" value="false"/>
+                           <setting name="AdcSarEnableTempsenseApi" value="true"/>
+                           <setting name="AdcSarTempSenseVsupply" value="0x50"/>
+                        </struct>
+                        <array name="AdcHwUnit">
+                           <struct name="0">
+                              <setting name="Name" value="AdcHwUnit_0"/>
+                              <setting name="AdcHwUnitId" value="ADC0"/>
+                              <setting name="AdcHwUnitConvMode" value="ADC_SAR_IP_CONV_MODE_ONESHOT"/>
+                              <setting name="AdcPrescale" value="1"/>
+                              <setting name="AdcCalibrationPrescale" value="1"/>
+                              <setting name="AdcHighSpeedEnable" value="false"/>
+                              <setting name="AdcPowerDownDelay" value="0"/>
+                              <setting name="AdcMuxDelay" value="0"/>
+                              <setting name="AdcAutoClockOff" value="false"/>
+                              <setting name="AdcBypassSampling" value="false"/>
+                              <setting name="AdcHwUnitOverwriteEn" value="false"/>
+                              <setting name="AdcPresamplingInternalSignal0" value="VREFL"/>
+                              <setting name="AdcPresamplingInternalSignal1" value="VREFL"/>
+                              <setting name="AdcPresamplingInternalSignal2" value="VREFL"/>
+                              <setting name="AdcHwUnitCtuMode" value="ADC_SAR_IP_CTU_MODE_CONTROL"/>
+                              <setting name="AdcHwUnitExtInjTrg" value="ADC_SAR_IP_EXT_TRIG_EDGE_DISABLED"/>
+                              <setting name="AdcHwUnitExtNrmTrg" value="ADC_SAR_IP_EXT_TRIG_EDGE_DISABLED"/>
+                              <setting name="AdcHwUnitPrimaryExtNrmTrg" value="true"/>
+                              <setting name="AdcHwUnitAuxiliaryExtNrmTrg" value="false"/>
+                              <setting name="AdcHwUnitUsrOffset" value="0"/>
+                              <setting name="AdcHwUnitUsrGain" value="0"/>
+                              <setting name="AdcHwUnitResolution" value="RESOLUTION_14"/>
+                              <setting name="AdcHwUnitBypassResolution" value="false"/>
+                              <setting name="AdcHwUnitDmaEnable" value="false"/>
+                              <setting name="AdcHwUnitDmaClearSource" value="DMA_REQ_CLEAR_ON_ACK"/>
+                              <setting name="AdcHwUnitNotifChainN" value="NULL_PTR"/>
+                              <setting name="AdcHwUnitNotifChainJ" value="NULL_PTR"/>
+                              <setting name="AdcHwUnitNotifCtu" value="NULL_PTR"/>
+                              <setting name="AdcHwUnitNotifEOC" value="NULL_PTR"/>
+                              <setting name="AdcHwUnitNotifWdg" value="NULL_PTR"/>
+                              <setting name="AdcHwUnitDataAlign" value="ADC_SAR_IP_DATA_ALIGNED_RIGHT"/>
+                              <setting name="AdcSarHwUnitVref" value="53"/>
+                              <array name="AdcSelfTestThresholdConfiguration"/>
+                              <setting name="AdcHardwareAverageEnable" value="false"/>
+                              <setting name="AdcHardwareAverageSelect" value="SAMPLES_4"/>
+                              <setting name="AdcSamplingDurationNormal0" value="22"/>
+                              <setting name="AdcSamplingDurationNormal1" value="22"/>
+                              <setting name="AdcSamplingDurationNormal2" value="22"/>
+                              <array name="AdcChannel">
+                                 <struct name="0">
+                                    <setting name="Name" value="AdcChannel_0"/>
+                                    <setting name="AdcChannelName" value="P0_ChanNum0"/>
+                                    <setting name="NormalChnEn" value="false"/>
+                                    <setting name="InjectedChnEn" value="false"/>
+                                    <setting name="AdcEnablePresampling" value="false"/>
+                                    <setting name="AdcEnableThresholds" value="false"/>
+                                    <array name="AdcThresholdRegister"/>
+                                    <setting name="WdgEn" value="false"/>
+                                    <setting name="EOCEn" value="false"/>
+                                    <setting name="DmaEn" value="false"/>
+                                 </struct>
+                              </array>
+                              <array name="AdcThresholdControl"/>
+                           </struct>
+                           <struct name="1">
+                              <setting name="Name" value="AdcHwUnit_1"/>
+                              <setting name="AdcHwUnitId" value="ADC1"/>
+                              <setting name="AdcHwUnitConvMode" value="ADC_SAR_IP_CONV_MODE_ONESHOT"/>
+                              <setting name="AdcPrescale" value="2"/>
+                              <setting name="AdcCalibrationPrescale" value="1"/>
+                              <setting name="AdcHighSpeedEnable" value="false"/>
+                              <setting name="AdcPowerDownDelay" value="0"/>
+                              <setting name="AdcMuxDelay" value="0"/>
+                              <setting name="AdcAutoClockOff" value="false"/>
+                              <setting name="AdcBypassSampling" value="false"/>
+                              <setting name="AdcHwUnitOverwriteEn" value="false"/>
+                              <setting name="AdcPresamplingInternalSignal0" value="VREFL"/>
+                              <setting name="AdcPresamplingInternalSignal1" value="VREFL"/>
+                              <setting name="AdcPresamplingInternalSignal2" value="VREFL"/>
+                              <setting name="AdcHwUnitCtuMode" value="ADC_SAR_IP_CTU_MODE_CONTROL"/>
+                              <setting name="AdcHwUnitExtInjTrg" value="ADC_SAR_IP_EXT_TRIG_EDGE_DISABLED"/>
+                              <setting name="AdcHwUnitExtNrmTrg" value="ADC_SAR_IP_EXT_TRIG_EDGE_DISABLED"/>
+                              <setting name="AdcHwUnitPrimaryExtNrmTrg" value="true"/>
+                              <setting name="AdcHwUnitAuxiliaryExtNrmTrg" value="false"/>
+                              <setting name="AdcHwUnitUsrOffset" value="0"/>
+                              <setting name="AdcHwUnitUsrGain" value="0"/>
+                              <setting name="AdcHwUnitResolution" value="RESOLUTION_14"/>
+                              <setting name="AdcHwUnitBypassResolution" value="false"/>
+                              <setting name="AdcHwUnitDmaEnable" value="false"/>
+                              <setting name="AdcHwUnitDmaClearSource" value="DMA_REQ_CLEAR_ON_ACK"/>
+                              <setting name="AdcHwUnitNotifChainN" value="NULL_PTR"/>
+                              <setting name="AdcHwUnitNotifChainJ" value="NULL_PTR"/>
+                              <setting name="AdcHwUnitNotifCtu" value="NULL_PTR"/>
+                              <setting name="AdcHwUnitNotifEOC" value="NULL_PTR"/>
+                              <setting name="AdcHwUnitNotifWdg" value="NULL_PTR"/>
+                              <setting name="AdcHwUnitDataAlign" value="ADC_SAR_IP_DATA_ALIGNED_RIGHT"/>
+                              <setting name="AdcSarHwUnitVref" value="0x50"/>
+                              <array name="AdcSelfTestThresholdConfiguration"/>
+                              <setting name="AdcHardwareAverageEnable" value="false"/>
+                              <setting name="AdcHardwareAverageSelect" value="SAMPLES_4"/>
+                              <setting name="AdcSamplingDurationNormal0" value="22"/>
+                              <setting name="AdcSamplingDurationNormal1" value="22"/>
+                              <setting name="AdcSamplingDurationNormal2" value="22"/>
+                              <array name="AdcChannel">
+                                 <struct name="0">
+                                    <setting name="Name" value="AdcChannel_0"/>
+                                    <setting name="AdcChannelName" value="P0_ChanNum0"/>
+                                    <setting name="NormalChnEn" value="false"/>
+                                    <setting name="InjectedChnEn" value="false"/>
+                                    <setting name="AdcEnablePresampling" value="false"/>
+                                    <setting name="AdcEnableThresholds" value="false"/>
+                                    <array name="AdcThresholdRegister"/>
+                                    <setting name="WdgEn" value="false"/>
+                                    <setting name="EOCEn" value="false"/>
+                                    <setting name="DmaEn" value="false"/>
+                                 </struct>
+                              </array>
+                              <array name="AdcThresholdControl"/>
+                           </struct>
+                        </array>
+                     </config_set>
+                  </instance>
+                  <instance name="Bctu_Ip" uuid="d4340773-f6b6-4f04-8e7d-fe3e362b12ab" type="Bctu_Ip" type_id="Bctu_Ip" mode="ip" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
+                     <config_set name="Bctu_Ip">
+                        <setting name="Name" value="Bctu_Ip"/>
+                        <struct name="BctuGeneral">
+                           <setting name="Name" value="BctuGeneral"/>
+                           <setting name="BctuTimeoutMethod" value="OSIF_COUNTER_DUMMY"/>
+                           <setting name="BctuTimeoutValue" value="3000"/>
+                           <setting name="BctuIpDevErrorDetect" value="false"/>
+                           <setting name="CtuEnableDmaTransferMode" value="false"/>
+                        </struct>
+                        <array name="BctuHwUnit">
+                           <struct name="0">
+                              <setting name="Name" value="BctuHwUnit_0"/>
+                              <setting name="BctuHwUnitId" value="0"/>
+                              <setting name="BctuLogicalUnitId" value="0"/>
+                              <setting name="BctuLowPowerMode" value="false"/>
+                              <setting name="BctuGlobalHwTriggers" value="true"/>
+                              <setting name="BctuNewDataDMAEnableMask" value="0"/>
+                              <setting name="BctuFifoDmaRawData" value="false"/>
+                              <setting name="BctuTriggerNotification" value="NULL_PTR"/>
+                              <array name="BctuInternalTrigger">
+                                 <struct name="0">
+                                    <setting name="Name" value="BctuTrigConfig_0"/>
+                                    <setting name="BctuTriggerSource" value="BCTU_EMIOS_0_4"/>
+                                    <setting name="BctuTriggerLoop" value="false"/>
+                                    <setting name="BctuDataDestination" value="BCTU_FIFO1"/>
+                                    <setting name="BctuHwTriggerEnable" value="true"/>
+                                    <setting name="BctuTriggerConversionMode" value="LIST"/>
+                                    <setting name="BctuAdcTargetMask" value="0b011"/>
+                                    <setting name="BctuAdcChannelSingle" value="0"/>
+                                    <setting name="BctuConversionListStartIndex" value="0"/>
+                                 </struct>
+                              </array>
+                              <array name="BctuAdcNotifications"/>
+                              <array name="BctuListItems">
+                                 <struct name="0">
+                                    <setting name="Name" value="BctuListItems_0"/>
+                                    <setting name="BctuAdcChannelList" value="P2_ChanNum2"/>
+                                    <setting name="BctuNextChannelWaitOnTrig" value="false"/>
+                                    <setting name="BctuLastChannel" value="false"/>
+                                 </struct>
+                                 <struct name="1">
+                                    <setting name="Name" value="BctuListItems_1"/>
+                                    <setting name="BctuAdcChannelList" value="P1_ChanNum1"/>
+                                    <setting name="BctuNextChannelWaitOnTrig" value="false"/>
+                                    <setting name="BctuLastChannel" value="false"/>
+                                 </struct>
+                                 <struct name="2">
+                                    <setting name="Name" value="BctuListItems_2"/>
+                                    <setting name="BctuAdcChannelList" value="P1_ChanNum1"/>
+                                    <setting name="BctuNextChannelWaitOnTrig" value="false"/>
+                                    <setting name="BctuLastChannel" value="false"/>
+                                 </struct>
+                                 <struct name="3">
+                                    <setting name="Name" value="BctuListItems_3"/>
+                                    <setting name="BctuAdcChannelList" value="P3_ChanNum3"/>
+                                    <setting name="BctuNextChannelWaitOnTrig" value="false"/>
+                                    <setting name="BctuLastChannel" value="true"/>
+                                 </struct>
+                              </array>
+                              <array name="BctuResultFifos">
+                                 <struct name="0">
+                                    <setting name="Name" value="BctuResultFifos_0"/>
+                                    <setting name="BctuResultFifoIndex" value="BCTU_FIFO1"/>
+                                    <setting name="BctuWatermarkValue" value="3"/>
+                                    <setting name="BctuFifoNotificationsEnable" value="true"/>
+                                    <setting name="BctuWatermarkNotification" value="Bctu_FIFO1_WatermarkNotification"/>
+                                    <setting name="BctuUnderrunNotification" value="NULL_PTR"/>
+                                    <setting name="BctuOverrunNotification" value="NULL_PTR"/>
+                                    <setting name="BctuFifoDmaEnable" value="false"/>
+                                    <setting name="BctuFifoDmaBuffer" value="BctuDmaFifo1"/>
+                                    <array name="BctuFifoDmaChannelId"/>
+                                 </struct>
+                              </array>
+                           </struct>
+                        </array>
+                     </config_set>
+                  </instance>
+                  <instance name="Emios_Icu" uuid="027f99ea-2e7e-4872-b4d5-8ae5bb3a1ec7" type="Emios_Icu" type_id="Emios_Icu" mode="ip" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
+                     <config_set name="Emios_Icu">
+                        <setting name="Name" value="Emios_Icu"/>
+                        <struct name="ConfigTimeSupport">
+                           <setting name="POST_BUILD_VARIANT_USED" value="false"/>
+                           <setting name="IMPLEMENTATION_CONFIG_VARIANT" value="VARIANT-POST-BUILD"/>
+                        </struct>
+                        <struct name="IcuConfigSet">
+                           <setting name="Name" value="eMiosConfigSet"/>
+                           <setting name="IcuMaxChannel" value="2"/>
+                           <array name="IcuChannel">
+                              <struct name="0">
+                                 <setting name="Name" value="EMIOS_ENCODER_CW_POSITION"/>
+                                 <setting name="IcuChannelId" value="0"/>
+                                 <setting name="IcuChannelRef" value="/Emios_Icu/Emios_Icu/eMiosConfigSet/IcueMios_0/IcueMios_0_Channel_0"/>
+                                 <setting name="IcuDMAChannelEnable" value="false"/>
+                                 <array name="IcuDMAChannelRef"/>
+                                 <setting name="IcuDefaultStartEdge" value="ICU_RISING_EDGE"/>
+                                 <setting name="IcuMeasurementMode" value="ICU_MODE_EDGE_COUNTER"/>
+                                 <setting name="IcuOverflowNotification" value="NULL_PTR"/>
+                                 <array name="IcuSignalEdgeDetection"/>
+                                 <array name="IcuSignalMeasurement"/>
+                                 <array name="IcuTimestampMeasurement"/>
+                              </struct>
+                              <struct name="1">
+                                 <setting name="Name" value="EMIOS_ENCODER_CCW_POSITION"/>
+                                 <setting name="IcuChannelId" value="1"/>
+                                 <setting name="IcuChannelRef" value="/Emios_Icu/Emios_Icu/eMiosConfigSet/IcueMios_0/IcueMios_0_Channel_1"/>
+                                 <setting name="IcuDMAChannelEnable" value="false"/>
+                                 <array name="IcuDMAChannelRef"/>
+                                 <setting name="IcuDefaultStartEdge" value="ICU_RISING_EDGE"/>
+                                 <setting name="IcuMeasurementMode" value="ICU_MODE_EDGE_COUNTER"/>
+                                 <setting name="IcuOverflowNotification" value="NULL_PTR"/>
+                                 <array name="IcuSignalEdgeDetection"/>
+                                 <array name="IcuSignalMeasurement"/>
+                                 <array name="IcuTimestampMeasurement"/>
+                              </struct>
+                           </array>
+                           <array name="IcueMios">
+                              <struct name="0">
+                                 <setting name="Name" value="IcueMios_0"/>
+                                 <setting name="IcueMiosModule" value="0"/>
+                                 <array name="IcueMiosChannels">
+                                    <struct name="0">
+                                       <setting name="Name" value="IcueMios_0_Channel_0"/>
+                                       <setting name="IcueMiosChannel" value="5"/>
+                                       <setting name="IcuEmiosFreeze" value="false"/>
+                                       <setting name="IcuEmiosPrescaler" value="EMIOS_PRESCALER_DIVIDE_1"/>
+                                       <setting name="IcuEmiosPrescaler_Alternate" value="EMIOS_PRESCALER_DIVIDE_1"/>
+                                       <setting name="IcuEmiosDigitalFilter" value="EMIOS_DIGITAL_FILTER_BYPASSED"/>
+                                       <setting name="IcuEmiosFilterClockSelect" value="false"/>
+                                       <setting name="IcuEmiosBusSelect" value="EMIOS_ICU_BUS_INTERNAL_COUNTER"/>
+                                       <setting name="IcuEmiosBusRef" value=""/>
+                                       <setting name="IcuSubModeforMeasurement" value="SAIC"/>
+                                       <setting name="IcuSignalMeasureWithoutInterrupt" value="false"/>
+                                    </struct>
+                                    <struct name="1">
+                                       <setting name="Name" value="IcueMios_0_Channel_1"/>
+                                       <setting name="IcueMiosChannel" value="6"/>
+                                       <setting name="IcuEmiosFreeze" value="false"/>
+                                       <setting name="IcuEmiosPrescaler" value="EMIOS_PRESCALER_DIVIDE_1"/>
+                                       <setting name="IcuEmiosPrescaler_Alternate" value="EMIOS_PRESCALER_DIVIDE_1"/>
+                                       <setting name="IcuEmiosDigitalFilter" value="EMIOS_DIGITAL_FILTER_BYPASSED"/>
+                                       <setting name="IcuEmiosFilterClockSelect" value="false"/>
+                                       <setting name="IcuEmiosBusSelect" value="EMIOS_ICU_BUS_INTERNAL_COUNTER"/>
+                                       <setting name="IcuEmiosBusRef" value=""/>
+                                       <setting name="IcuSubModeforMeasurement" value="SAIC"/>
+                                       <setting name="IcuSignalMeasureWithoutInterrupt" value="false"/>
+                                    </struct>
+                                 </array>
+                              </struct>
+                           </array>
+                           <array name="IcuHwInterruptConfigList">
+                              <struct name="0">
+                                 <setting name="Name" value="IcuHwInterruptConfigList_0"/>
+                                 <setting name="IcuIsrHwId" value="EMIOS_0_CH_5"/>
+                              </struct>
+                              <struct name="1">
+                                 <setting name="Name" value="IcuHwInterruptConfigList_1"/>
+                                 <setting name="IcuIsrHwId" value="EMIOS_0_CH_6"/>
+                              </struct>
+                           </array>
+                        </struct>
+                        <struct name="IcuGeneral">
+                           <setting name="Name" value="EmiosIcuGeneral"/>
+                           <setting name="IcuDevErrorDetect" value="false"/>
+                        </struct>
+                        <struct name="IcuAutosarExt">
+                           <setting name="Name" value="EmiosIcuAutosarExt"/>
+                           <setting name="IcuSaicEdgeCapturing" value="false"/>
+                        </struct>
+                     </config_set>
+                  </instance>
+                  <instance name="Emios_Mcl_Ip" uuid="c8efc1c2-8616-44c3-8412-050910f29e9e" type="Emios_Mcl_Ip" type_id="Emios_Mcl_Ip" mode="emios_mcl" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
+                     <config_set name="Emios_Mcl_Ip">
+                        <setting name="Name" value="EmiosMcl"/>
+                        <struct name="ConfigTimeSupport">
+                           <setting name="POST_BUILD_VARIANT_USED" value="false"/>
+                           <setting name="IMPLEMENTATION_CONFIG_VARIANT" value="VARIANT-POST-BUILD"/>
+                        </struct>
+                        <struct name="MclGeneral">
+                           <setting name="Name" value="MclGeneral"/>
+                           <setting name="MclEnableDevErrorDetect" value="false"/>
+                           <struct name="MclEmiosCommon">
+                              <setting name="Name" value="MclEmiosCommon"/>
+                              <setting name="MclEnableEmiosCommon" value="true"/>
+                           </struct>
+                        </struct>
+                        <array name="EmiosCommon">
+                           <struct name="0">
+                              <setting name="Name" value="EmiosCommon_0"/>
+                              <setting name="EmiosMclInstances" value="EMIOS_0"/>
+                              <setting name="EmiosMclEnableFreezState" value="true"/>
+                              <setting name="EmiosMclEnableGlobalTimeBase" value="true"/>
+                              <setting name="EmiosMclClkDivVal" value="1"/>
+                              <array name="EmiosMclMasterBus">
+                                 <struct name="0">
+                                    <setting name="Name" value="EMIOS_0_PWM_TIME_BASE"/>
+                                    <setting name="EmiosMclMasterBusNumber" value="EMIOS_CH_0"/>
+                                    <setting name="EmiosMclMasterBusModeType" value="MCB_UP_COUNTER"/>
+                                    <setting name="EmiosMclDefaultPeriod" value="6000"/>
+                                    <setting name="EmiosMclFirstOffsetValue" value="0"/>
+                                    <setting name="EmiosMclMasterBusPrescaler" value="DIV_1"/>
+                                    <setting name="EmiosMclMasterBusAltPrescaler" value="DIV_1"/>
+                                    <setting name="EmiosMclChannelAllowDebugMode" value="true"/>
+                                    <setting name="EmiosMclPwmExclusiveAccess" value="true"/>
+                                 </struct>
+                                 <struct name="1">
+                                    <setting name="Name" value="EMIOS_0_TRIGGER_TIME_BASE"/>
+                                    <setting name="EmiosMclMasterBusNumber" value="EMIOS_CH_23"/>
+                                    <setting name="EmiosMclMasterBusModeType" value="MCB_UP_COUNTER"/>
+                                    <setting name="EmiosMclDefaultPeriod" value="12000"/>
+                                    <setting name="EmiosMclFirstOffsetValue" value="0"/>
+                                    <setting name="EmiosMclMasterBusPrescaler" value="DIV_1"/>
+                                    <setting name="EmiosMclMasterBusAltPrescaler" value="DIV_1"/>
+                                    <setting name="EmiosMclChannelAllowDebugMode" value="true"/>
+                                    <setting name="EmiosMclPwmExclusiveAccess" value="true"/>
+                                 </struct>
+                              </array>
+                           </struct>
+                        </array>
+                     </config_set>
+                  </instance>
+                  <instance name="Emios_Pwm" uuid="7ad5a730-1364-48e4-aafa-b4e683ed6392" type="Emios_Pwm" type_id="Emios_Pwm" mode="ip" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
+                     <config_set name="Emios_Pwm">
+                        <struct name="ConfigTimeSupport">
+                           <setting name="POST_BUILD_VARIANT_USED" value="false"/>
+                           <setting name="IMPLEMENTATION_CONFIG_VARIANT" value="VARIANT-POST-BUILD"/>
+                        </struct>
+                        <struct name="PwmGeneral">
+                           <setting name="Name" value="PwmGeneral"/>
+                           <setting name="PwmDevErrorDetect" value="false"/>
+                           <setting name="PwmEnableUserModeSupport" value="false"/>
+                        </struct>
+                        <array name="PwmEmios">
+                           <struct name="0">
+                              <setting name="Name" value="PwmEmios_0"/>
+                              <setting name="PwmHwInstance" value="Emios_0"/>
+                              <array name="PwmEmiosChannels">
+                                 <struct name="0">
+                                    <setting name="Name" value="EMIOS_PWMA"/>
+                                    <setting name="EmiosChId" value="CH_1"/>
+                                    <setting name="EmiosChMode" value="EMIOS_PWM_IP_MODE_OPWMB"/>
+                                    <setting name="EmiosChFlagGeneration" value="Trailing_Edge"/>
+                                    <setting name="EmiosChCounterBus" value="EMIOS_PWM_IP_BUS_BCD"/>
+                                    <array name="PwmEmiosBusRef">
+                                       <setting name="0" value="/Emios_Mcl_Ip/EmiosMcl/EmiosCommon_0/EMIOS_0_PWM_TIME_BASE"/>
+                                    </array>
+                                    <setting name="EmiosChFreeze" value="false"/>
+                                    <setting name="EmiosChOutputDisable" value="EMIOS_PWM_IP_OUTPUT_DISABLE_NONE"/>
+                                    <setting name="EmiosChPrescaler" value="EMIOS_PWM_IP_CLOCK_DIV_1"/>
+                                    <setting name="EmiosChPrescalerAlternate" value="EMIOS_PWM_IP_CLOCK_DIV_1"/>
+                                    <setting name="EmiosChPrescalerSource" value="EMIOS_PWM_IP_PS_SRC_MODULE_CLOCK"/>
+                                    <setting name="EmiosChPolarity" value="EMIOS_PWM_IP_ACTIVE_HIGH"/>
+                                    <setting name="EmiosChInterrupt" value="EMIOS_PWM_IP_NOTIFICATION_DISABLED"/>
+                                    <struct name="EmiosChIrqCallback">
+                                       <setting name="Name" value="EmiosChIrqCallback"/>
+                                       <setting name="EmiosChIrqFunctionCallback" value="NULL_PTR"/>
+                                       <setting name="EmiosChIrqParameterCallback" value="NULL_PTR"/>
+                                    </struct>
+                                    <setting name="EmiosChDutyCycle" value="3000"/>
+                                    <setting name="EmiosChPeriod" value="6000"/>
+                                    <setting name="EmiosChPhaseShift" value="1500"/>
+                                    <setting name="EmiosChTrigger" value="0"/>
+                                    <setting name="EmiosChDeadtime" value="0"/>
+                                 </struct>
+                                 <struct name="1">
+                                    <setting name="Name" value="EMIOS_PWMB"/>
+                                    <setting name="EmiosChId" value="CH_2"/>
+                                    <setting name="EmiosChMode" value="EMIOS_PWM_IP_MODE_OPWMB"/>
+                                    <setting name="EmiosChFlagGeneration" value="Trailing_Edge"/>
+                                    <setting name="EmiosChCounterBus" value="EMIOS_PWM_IP_BUS_BCD"/>
+                                    <array name="PwmEmiosBusRef">
+                                       <setting name="0" value="/Emios_Mcl_Ip/EmiosMcl/EmiosCommon_0/EMIOS_0_PWM_TIME_BASE"/>
+                                    </array>
+                                    <setting name="EmiosChFreeze" value="false"/>
+                                    <setting name="EmiosChOutputDisable" value="EMIOS_PWM_IP_OUTPUT_DISABLE_NONE"/>
+                                    <setting name="EmiosChPrescaler" value="EMIOS_PWM_IP_CLOCK_DIV_1"/>
+                                    <setting name="EmiosChPrescalerAlternate" value="EMIOS_PWM_IP_CLOCK_DIV_1"/>
+                                    <setting name="EmiosChPrescalerSource" value="EMIOS_PWM_IP_PS_SRC_MODULE_CLOCK"/>
+                                    <setting name="EmiosChPolarity" value="EMIOS_PWM_IP_ACTIVE_HIGH"/>
+                                    <setting name="EmiosChInterrupt" value="EMIOS_PWM_IP_NOTIFICATION_DISABLED"/>
+                                    <struct name="EmiosChIrqCallback">
+                                       <setting name="Name" value="EmiosChIrqCallback"/>
+                                       <setting name="EmiosChIrqFunctionCallback" value="NULL_PTR"/>
+                                       <setting name="EmiosChIrqParameterCallback" value="NULL_PTR"/>
+                                    </struct>
+                                    <setting name="EmiosChDutyCycle" value="3000"/>
+                                    <setting name="EmiosChPeriod" value="6000"/>
+                                    <setting name="EmiosChPhaseShift" value="1500"/>
+                                    <setting name="EmiosChTrigger" value="0"/>
+                                    <setting name="EmiosChDeadtime" value="0"/>
+                                 </struct>
+                                 <struct name="2">
+                                    <setting name="Name" value="EMIOS_PWMC"/>
+                                    <setting name="EmiosChId" value="CH_3"/>
+                                    <setting name="EmiosChMode" value="EMIOS_PWM_IP_MODE_OPWMB"/>
+                                    <setting name="EmiosChFlagGeneration" value="Trailing_Edge"/>
+                                    <setting name="EmiosChCounterBus" value="EMIOS_PWM_IP_BUS_BCD"/>
+                                    <array name="PwmEmiosBusRef">
+                                       <setting name="0" value="/Emios_Mcl_Ip/EmiosMcl/EmiosCommon_0/EMIOS_0_PWM_TIME_BASE"/>
+                                    </array>
+                                    <setting name="EmiosChFreeze" value="false"/>
+                                    <setting name="EmiosChOutputDisable" value="EMIOS_PWM_IP_OUTPUT_DISABLE_NONE"/>
+                                    <setting name="EmiosChPrescaler" value="EMIOS_PWM_IP_CLOCK_DIV_1"/>
+                                    <setting name="EmiosChPrescalerAlternate" value="EMIOS_PWM_IP_CLOCK_DIV_1"/>
+                                    <setting name="EmiosChPrescalerSource" value="EMIOS_PWM_IP_PS_SRC_MODULE_CLOCK"/>
+                                    <setting name="EmiosChPolarity" value="EMIOS_PWM_IP_ACTIVE_HIGH"/>
+                                    <setting name="EmiosChInterrupt" value="EMIOS_PWM_IP_NOTIFICATION_DISABLED"/>
+                                    <struct name="EmiosChIrqCallback">
+                                       <setting name="Name" value="EmiosChIrqCallback"/>
+                                       <setting name="EmiosChIrqFunctionCallback" value="NULL_PTR"/>
+                                       <setting name="EmiosChIrqParameterCallback" value="NULL_PTR"/>
+                                    </struct>
+                                    <setting name="EmiosChDutyCycle" value="3000"/>
+                                    <setting name="EmiosChPeriod" value="6000"/>
+                                    <setting name="EmiosChPhaseShift" value="1500"/>
+                                    <setting name="EmiosChTrigger" value="0"/>
+                                    <setting name="EmiosChDeadtime" value="0"/>
+                                 </struct>
+                                 <struct name="3">
+                                    <setting name="Name" value="EMIOS_TRIGGER_BCTU_MC_MEAS"/>
+                                    <setting name="EmiosChId" value="CH_4"/>
+                                    <setting name="EmiosChMode" value="EMIOS_PWM_IP_MODE_OPWMB"/>
+                                    <setting name="EmiosChFlagGeneration" value="Trailing_Edge"/>
+                                    <setting name="EmiosChCounterBus" value="EMIOS_PWM_IP_BUS_A"/>
+                                    <array name="PwmEmiosBusRef">
+                                       <setting name="0" value="/Emios_Mcl_Ip/EmiosMcl/EmiosCommon_0/EMIOS_0_TRIGGER_TIME_BASE"/>
+                                    </array>
+                                    <setting name="EmiosChFreeze" value="false"/>
+                                    <setting name="EmiosChOutputDisable" value="EMIOS_PWM_IP_OUTPUT_DISABLE_NONE"/>
+                                    <setting name="EmiosChPrescaler" value="EMIOS_PWM_IP_CLOCK_DIV_1"/>
+                                    <setting name="EmiosChPrescalerAlternate" value="EMIOS_PWM_IP_CLOCK_DIV_1"/>
+                                    <setting name="EmiosChPrescalerSource" value="EMIOS_PWM_IP_PS_SRC_MODULE_CLOCK"/>
+                                    <setting name="EmiosChPolarity" value="EMIOS_PWM_IP_ACTIVE_HIGH"/>
+                                    <setting name="EmiosChInterrupt" value="EMIOS_PWM_IP_NOTIFICATION_DISABLED"/>
+                                    <struct name="EmiosChIrqCallback">
+                                       <setting name="Name" value="EmiosChIrqCallback"/>
+                                       <setting name="EmiosChIrqFunctionCallback" value="NULL_PTR"/>
+                                       <setting name="EmiosChIrqParameterCallback" value="NULL_PTR"/>
+                                    </struct>
+                                    <setting name="EmiosChDutyCycle" value="5"/>
+                                    <setting name="EmiosChPeriod" value="12000"/>
+                                    <setting name="EmiosChPhaseShift" value="0"/>
+                                    <setting name="EmiosChTrigger" value="0"/>
+                                    <setting name="EmiosChDeadtime" value="0"/>
+                                 </struct>
+                              </array>
+                           </struct>
+                        </array>
+                        <setting name="Name" value="Emios_Pwm"/>
+                     </config_set>
+                  </instance>
+                  <instance name="IntCtrl_Ip" uuid="876f79fc-5acb-4eff-b38c-373fa211eeed" type="IntCtrl_Ip" type_id="IntCtrl_Ip" mode="ip" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
+                     <config_set name="IntCtrl_Ip">
+                        <setting name="Name" value="IntCtrl_Ip"/>
+                        <struct name="ConfigTimeSupport">
+                           <setting name="POST_BUILD_VARIANT_USED" value="false"/>
+                           <setting name="IMPLEMENTATION_CONFIG_VARIANT" value="VARIANT-PRE-COMPILE"/>
+                        </struct>
+                        <struct name="IntCtrlConfigGeneral">
+                           <setting name="Name" value="IntCtrlConfigGeneral"/>
+                           <setting name="IntCtrlDevErrorDetect" value="false"/>
+                           <setting name="PlatformEnableUserModeSupport" value="false"/>
+                           <setting name="IntctrlEnableMSIConfiguration" value="false"/>
+                        </struct>
+                        <array name="IntCtrlConfig">
+                           <struct name="0">
+                              <setting name="Name" value="IntCtrlConfig_0"/>
+                              <array name="PlatformIsrConfig">
+                                 <struct name="0">
+                                    <setting name="Name" value="PlatformIsrConfig_24"/>
+                                    <setting name="IsrName" value="SIUL_0_IRQn"/>
+                                    <setting name="IsrEnabled" value="true"/>
+                                    <setting name="IsrPriority" value="0"/>
+                                    <setting name="IsrHandler" value="SIUL2_EXT_IRQ_0_7_ISR"/>
+                                 </struct>
+                                 <struct name="1">
+                                    <setting name="Name" value="PlatformIsrConfig_1"/>
+                                    <setting name="IsrName" value="BCTU_IRQn"/>
+                                    <setting name="IsrEnabled" value="true"/>
+                                    <setting name="IsrPriority" value="0"/>
+                                    <setting name="IsrHandler" value="Bctu_0_Isr"/>
+                                 </struct>
+                              </array>
+                           </struct>
+                        </array>
+                     </config_set>
+                  </instance>
+                  <instance name="Lcu_Ip" uuid="af9f5182-4a24-4d43-b65f-a9dcd715f502" type="Lcu_Ip" type_id="Lcu_Ip" mode="general" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
+                     <config_set name="Lcu_Ip">
+                        <setting name="Name" value="Lcu_Ip"/>
+                        <struct name="ConfigTimeSupport">
+                           <setting name="POST_BUILD_VARIANT_USED" value="false"/>
+                           <setting name="IMPLEMENTATION_CONFIG_VARIANT" value="VARIANT-POST-BUILD"/>
+                        </struct>
+                        <struct name="MclGeneral">
+                           <setting name="Name" value="General"/>
+                           <struct name="MclLcuConfig">
+                              <setting name="Name" value="MclLcuConfig"/>
+                              <setting name="MclEnableLcu" value="true"/>
+                              <setting name="MclEnableLcuSyncFunc" value="true"/>
+                              <setting name="MclEnableLcuAsyncFunc" value="true"/>
+                              <setting name="MclEnableLcuDevErrorDetect" value="false"/>
+                           </struct>
+                        </struct>
+                        <struct name="lcuConfiguration">
+                           <setting name="Name" value="LCU"/>
+                           <array name="lcuInstanceCfg">
+                              <struct name="0">
+                                 <setting name="Name" value="PWM_GD3000_CONTROL"/>
+                                 <setting name="lcuLogicInstance_LogicName" value="SA_LCU_LOGIC_INSTANCE_0"/>
+                                 <setting name="lcuLogicInstance_HwInstID" value="LCU_IP_HW_INST_0"/>
+                                 <setting name="lcuLogicInstance_OperationMode" value="INTERRUPT"/>
+                                 <setting name="lcuLogicCell_UsingForceSignal" value="false"/>
+                                 <setting name="lcuLogicCell_UsingSyncSignal" value="false"/>
+                                 <array name="lcuLogicCellCfg_lst">
+                                    <struct name="0">
+                                       <setting name="Name" value="lcuLogicCellCfg_lst_0"/>
+                                       <setting name="lcuLogicCell_HwLcID" value="LCU_IP_HW_LC_0"/>
+                                       <setting name="lcuLogicCell_forceFilter" value="0"/>
+                                       <setting name="lcuLogicCell_usingCombinationalForcePath" value="false"/>
+                                       <setting name="lcuLogicCell_usingForcePolarity" value="false"/>
+                                       <setting name="lcuLogicCell_SwSyncSel" value="LCU_IP_SYNC_SEL_INPUT0"/>
+                                       <setting name="lcuLogicCell_SwOverrideMode" value="LCU_IP_SW_SYNC_IMMEDIATE"/>
+                                       <array name="lcuLogicCell_ForceSignalCfg">
+                                          <struct name="0">
+                                             <setting name="Name" value="lcuLogicCell_ForceSignalCfg_0"/>
+                                             <setting name="lcuLogicCell_ForceSignalSelect" value="LCU_IP_FORCE_SEL_INPUT0"/>
+                                             <setting name="lcuLogicCell_combEnable" value="false"/>
+                                             <setting name="lcuLogicCell_forcePol" value="false"/>
+                                          </struct>
+                                       </array>
+                                    </struct>
+                                 </array>
+                              </struct>
+                              <struct name="1">
+                                 <setting name="Name" value="ENCODER_SENSOR_PROCESSING"/>
+                                 <setting name="lcuLogicInstance_LogicName" value="SA_LCU_LOGIC_INSTANCE_1"/>
+                                 <setting name="lcuLogicInstance_HwInstID" value="LCU_IP_HW_INST_1"/>
+                                 <setting name="lcuLogicInstance_OperationMode" value="INTERRUPT"/>
+                                 <setting name="lcuLogicCell_UsingForceSignal" value="false"/>
+                                 <setting name="lcuLogicCell_UsingSyncSignal" value="false"/>
+                                 <array name="lcuLogicCellCfg_lst">
+                                    <struct name="0">
+                                       <setting name="Name" value="lcuLogicCellCfg_lst_0"/>
+                                       <setting name="lcuLogicCell_HwLcID" value="LCU_IP_HW_LC_0"/>
+                                       <setting name="lcuLogicCell_forceFilter" value="0"/>
+                                       <setting name="lcuLogicCell_usingCombinationalForcePath" value="false"/>
+                                       <setting name="lcuLogicCell_usingForcePolarity" value="false"/>
+                                       <setting name="lcuLogicCell_SwSyncSel" value="LCU_IP_SYNC_SEL_INPUT0"/>
+                                       <setting name="lcuLogicCell_SwOverrideMode" value="LCU_IP_SW_SYNC_IMMEDIATE"/>
+                                       <array name="lcuLogicCell_ForceSignalCfg">
+                                          <struct name="0">
+                                             <setting name="Name" value="lcuLogicCell_ForceSignalCfg_0"/>
+                                             <setting name="lcuLogicCell_ForceSignalSelect" value="LCU_IP_FORCE_SEL_INPUT0"/>
+                                             <setting name="lcuLogicCell_combEnable" value="false"/>
+                                             <setting name="lcuLogicCell_forcePol" value="false"/>
+                                          </struct>
+                                       </array>
+                                    </struct>
+                                 </array>
+                              </struct>
+                           </array>
+                           <array name="mclLcuInputConfiguration">
+                              <struct name="0">
+                                 <setting name="Name" value="LCU_INP_EMIOS_PWMA"/>
+                                 <setting name="lcuLogicInput_LogicName" value="SA_LCU_LOGIC_INPUT_0"/>
+                                 <setting name="lcuLogicInput_HwInstID" value="LCU_IP_HW_INST_0"/>
+                                 <setting name="lcuLogicInput_HwLcID" value="LCU_IP_HW_LC_0"/>
+                                 <setting name="lcuLogicInput_HwInputID" value="LCU_IP_HW_INPUT_0"/>
+                                 <setting name="lcuLogicInput_MuxSelect" value="LCU_IP_MUX_SEL_LU_IN_0"/>
+                                 <setting name="lcuLogicInput_UsingSwOverride" value="false"/>
+                                 <setting name="lcuLogicInput_SwOverrideValue" value="LCU_IP_SW_OVERRIDE_LOGIC_LOW"/>
+                              </struct>
+                              <struct name="1">
+                                 <setting name="Name" value="LCU_INP_EMIOS_PWMB"/>
+                                 <setting name="lcuLogicInput_LogicName" value="SA_LCU_LOGIC_INPUT_1"/>
+                                 <setting name="lcuLogicInput_HwInstID" value="LCU_IP_HW_INST_0"/>
+                                 <setting name="lcuLogicInput_HwLcID" value="LCU_IP_HW_LC_0"/>
+                                 <setting name="lcuLogicInput_HwInputID" value="LCU_IP_HW_INPUT_1"/>
+                                 <setting name="lcuLogicInput_MuxSelect" value="LCU_IP_MUX_SEL_LU_IN_1"/>
+                                 <setting name="lcuLogicInput_UsingSwOverride" value="false"/>
+                                 <setting name="lcuLogicInput_SwOverrideValue" value="LCU_IP_SW_OVERRIDE_LOGIC_LOW"/>
+                              </struct>
+                              <struct name="2">
+                                 <setting name="Name" value="LCU_INP_EMIOS_PWMC"/>
+                                 <setting name="lcuLogicInput_LogicName" value="SA_LCU_LOGIC_INPUT_2"/>
+                                 <setting name="lcuLogicInput_HwInstID" value="LCU_IP_HW_INST_0"/>
+                                 <setting name="lcuLogicInput_HwLcID" value="LCU_IP_HW_LC_1"/>
+                                 <setting name="lcuLogicInput_HwInputID" value="LCU_IP_HW_INPUT_0"/>
+                                 <setting name="lcuLogicInput_MuxSelect" value="LCU_IP_MUX_SEL_LU_IN_2"/>
+                                 <setting name="lcuLogicInput_UsingSwOverride" value="false"/>
+                                 <setting name="lcuLogicInput_SwOverrideValue" value="LCU_IP_SW_OVERRIDE_LOGIC_LOW"/>
+                              </struct>
+                              <struct name="3">
+                                 <setting name="Name" value="ENCODER_PHA"/>
+                                 <setting name="lcuLogicInput_LogicName" value="SA_LCU_LOGIC_INPUT_3"/>
+                                 <setting name="lcuLogicInput_HwInstID" value="LCU_IP_HW_INST_1"/>
+                                 <setting name="lcuLogicInput_HwLcID" value="LCU_IP_HW_LC_0"/>
+                                 <setting name="lcuLogicInput_HwInputID" value="LCU_IP_HW_INPUT_0"/>
+                                 <setting name="lcuLogicInput_MuxSelect" value="LCU_IP_MUX_SEL_LU_IN_0"/>
+                                 <setting name="lcuLogicInput_UsingSwOverride" value="false"/>
+                                 <setting name="lcuLogicInput_SwOverrideValue" value="LCU_IP_SW_OVERRIDE_LOGIC_LOW"/>
+                              </struct>
+                              <struct name="4">
+                                 <setting name="Name" value="ENCODER_PHB"/>
+                                 <setting name="lcuLogicInput_LogicName" value="SA_LCU_LOGIC_INPUT_4"/>
+                                 <setting name="lcuLogicInput_HwInstID" value="LCU_IP_HW_INST_1"/>
+                                 <setting name="lcuLogicInput_HwLcID" value="LCU_IP_HW_LC_0"/>
+                                 <setting name="lcuLogicInput_HwInputID" value="LCU_IP_HW_INPUT_1"/>
+                                 <setting name="lcuLogicInput_MuxSelect" value="LCU_IP_MUX_SEL_LU_IN_1"/>
+                                 <setting name="lcuLogicInput_UsingSwOverride" value="false"/>
+                                 <setting name="lcuLogicInput_SwOverrideValue" value="LCU_IP_SW_OVERRIDE_LOGIC_LOW"/>
+                              </struct>
+                              <struct name="5">
+                                 <setting name="Name" value="ENCODER_PHA_SHIFTED"/>
+                                 <setting name="lcuLogicInput_LogicName" value="SA_LCU_LOGIC_INPUT_5"/>
+                                 <setting name="lcuLogicInput_HwInstID" value="LCU_IP_HW_INST_1"/>
+                                 <setting name="lcuLogicInput_HwLcID" value="LCU_IP_HW_LC_0"/>
+                                 <setting name="lcuLogicInput_HwInputID" value="LCU_IP_HW_INPUT_2"/>
+                                 <setting name="lcuLogicInput_MuxSelect" value="LCU_IP_MUX_SEL_LU_OUT_0"/>
+                                 <setting name="lcuLogicInput_UsingSwOverride" value="false"/>
+                                 <setting name="lcuLogicInput_SwOverrideValue" value="LCU_IP_SW_OVERRIDE_LOGIC_LOW"/>
+                              </struct>
+                              <struct name="6">
+                                 <setting name="Name" value="ENCODER_PHB_SHIFTED"/>
+                                 <setting name="lcuLogicInput_LogicName" value="SA_LCU_LOGIC_INPUT_6"/>
+                                 <setting name="lcuLogicInput_HwInstID" value="LCU_IP_HW_INST_1"/>
+                                 <setting name="lcuLogicInput_HwLcID" value="LCU_IP_HW_LC_0"/>
+                                 <setting name="lcuLogicInput_HwInputID" value="LCU_IP_HW_INPUT_3"/>
+                                 <setting name="lcuLogicInput_MuxSelect" value="LCU_IP_MUX_SEL_LU_OUT_1"/>
+                                 <setting name="lcuLogicInput_UsingSwOverride" value="false"/>
+                                 <setting name="lcuLogicInput_SwOverrideValue" value="LCU_IP_SW_OVERRIDE_LOGIC_LOW"/>
+                              </struct>
+                           </array>
+                           <array name="mclLcuOutputConfiguration">
+                              <struct name="0">
+                                 <setting name="Name" value="PWMA_LS"/>
+                                 <setting name="lcuLogicOutput_LogicName" value="SA_LCU_LOGIC_OUTPUT_0"/>
+                                 <setting name="lcuLogicOutput_HwInstID" value="LCU_IP_HW_INST_0"/>
+                                 <setting name="lcuLogicOutput_HwLcID" value="LCU_IP_HW_LC_0"/>
+                                 <setting name="lcuLogicOutput_HwOutputID" value="LCU_IP_HW_OUTPUT_0"/>
+                                 <setting name="lcuLogicOutput_LutControl" value="0x5555"/>
+                                 <setting name="lcuLogicOutput_LutRiseFilter" value="96"/>
+                                 <setting name="lcuLogicOutput_LutFallFilter" value="0"/>
+                                 <setting name="lcuLogicOutput_InterruptCallback" value="NULL_PTR"/>
+                                 <setting name="lcuLogicOutput_DebugMode" value="false"/>
+                                 <setting name="lcuLogicOutput_InvertOutput" value="false"/>
+                                 <setting name="lcuLogicOutput_LutDmaEnable" value="false"/>
+                                 <setting name="lcuLogicOutput_LutIntEnable" value="false"/>
+                                 <setting name="lcuLogicOutput_UsingForceSignal" value="false"/>
+                                 <struct name="lcuLogicOutput_ForceSignalConfiguration">
+                                    <setting name="Name" value="lcuLogicOutput_ForceSignalConfiguration"/>
+                                    <setting name="lcuLogicOutput_ForceClearMode" value="LCU_IP_CLEAR_FORCE_SIGNAL_IMMEDIATE"/>
+                                    <setting name="lcuLogicOutput_ForceSyncSelect" value="LCU_IP_SYNC_SEL_INPUT0"/>
+                                    <setting name="lcuLogicOutput_ForceDmaEnable" value="false"/>
+                                    <setting name="lcuLogicOutput_ForceIntEnable" value="false"/>
+                                    <array name="lcuLogicOutput_ForceSignalSelect">
+                                       <struct name="0">
+                                          <setting name="Name" value="lcuLogicOutput_ForceSignalSelect_0"/>
+                                          <setting name="lcuLogicOutput_ForceSignal" value="LCU_IP_FORCE_SEL_INPUT0"/>
+                                          <setting name="lcuLogicOutput_ForceSignalAffect" value="false"/>
+                                       </struct>
+                                    </array>
+                                 </struct>
+                              </struct>
+                              <struct name="1">
+                                 <setting name="Name" value="PWMA_HS"/>
+                                 <setting name="lcuLogicOutput_LogicName" value="LCU_LOGIC_OUTPUT_1"/>
+                                 <setting name="lcuLogicOutput_HwInstID" value="LCU_IP_HW_INST_0"/>
+                                 <setting name="lcuLogicOutput_HwLcID" value="LCU_IP_HW_LC_0"/>
+                                 <setting name="lcuLogicOutput_HwOutputID" value="LCU_IP_HW_OUTPUT_1"/>
+                                 <setting name="lcuLogicOutput_LutControl" value="0xAAAA"/>
+                                 <setting name="lcuLogicOutput_LutRiseFilter" value="96"/>
+                                 <setting name="lcuLogicOutput_LutFallFilter" value="0"/>
+                                 <setting name="lcuLogicOutput_InterruptCallback" value="NULL_PTR"/>
+                                 <setting name="lcuLogicOutput_DebugMode" value="false"/>
+                                 <setting name="lcuLogicOutput_InvertOutput" value="true"/>
+                                 <setting name="lcuLogicOutput_LutDmaEnable" value="false"/>
+                                 <setting name="lcuLogicOutput_LutIntEnable" value="false"/>
+                                 <setting name="lcuLogicOutput_UsingForceSignal" value="false"/>
+                                 <struct name="lcuLogicOutput_ForceSignalConfiguration">
+                                    <setting name="Name" value="lcuLogicOutput_ForceSignalConfiguration"/>
+                                    <setting name="lcuLogicOutput_ForceClearMode" value="LCU_IP_CLEAR_FORCE_SIGNAL_IMMEDIATE"/>
+                                    <setting name="lcuLogicOutput_ForceSyncSelect" value="LCU_IP_SYNC_SEL_INPUT1"/>
+                                    <setting name="lcuLogicOutput_ForceDmaEnable" value="false"/>
+                                    <setting name="lcuLogicOutput_ForceIntEnable" value="false"/>
+                                    <array name="lcuLogicOutput_ForceSignalSelect">
+                                       <struct name="0">
+                                          <setting name="Name" value="lcuLogicOutput_ForceSignalSelect_0"/>
+                                          <setting name="lcuLogicOutput_ForceSignal" value="LCU_IP_FORCE_SEL_INPUT0"/>
+                                          <setting name="lcuLogicOutput_ForceSignalAffect" value="false"/>
+                                       </struct>
+                                    </array>
+                                 </struct>
+                              </struct>
+                              <struct name="2">
+                                 <setting name="Name" value="PWMB_LS"/>
+                                 <setting name="lcuLogicOutput_LogicName" value="LCU_LOGIC_OUTPUT_2"/>
+                                 <setting name="lcuLogicOutput_HwInstID" value="LCU_IP_HW_INST_0"/>
+                                 <setting name="lcuLogicOutput_HwLcID" value="LCU_IP_HW_LC_0"/>
+                                 <setting name="lcuLogicOutput_HwOutputID" value="LCU_IP_HW_OUTPUT_2"/>
+                                 <setting name="lcuLogicOutput_LutControl" value="0x3333"/>
+                                 <setting name="lcuLogicOutput_LutRiseFilter" value="96"/>
+                                 <setting name="lcuLogicOutput_LutFallFilter" value="0"/>
+                                 <setting name="lcuLogicOutput_InterruptCallback" value="NULL_PTR"/>
+                                 <setting name="lcuLogicOutput_DebugMode" value="false"/>
+                                 <setting name="lcuLogicOutput_InvertOutput" value="false"/>
+                                 <setting name="lcuLogicOutput_LutDmaEnable" value="false"/>
+                                 <setting name="lcuLogicOutput_LutIntEnable" value="false"/>
+                                 <setting name="lcuLogicOutput_UsingForceSignal" value="false"/>
+                                 <struct name="lcuLogicOutput_ForceSignalConfiguration">
+                                    <setting name="Name" value="lcuLogicOutput_ForceSignalConfiguration"/>
+                                    <setting name="lcuLogicOutput_ForceClearMode" value="LCU_IP_CLEAR_FORCE_SIGNAL_IMMEDIATE"/>
+                                    <setting name="lcuLogicOutput_ForceSyncSelect" value="LCU_IP_SYNC_SEL_INPUT2"/>
+                                    <setting name="lcuLogicOutput_ForceDmaEnable" value="false"/>
+                                    <setting name="lcuLogicOutput_ForceIntEnable" value="false"/>
+                                    <array name="lcuLogicOutput_ForceSignalSelect">
+                                       <struct name="0">
+                                          <setting name="Name" value="lcuLogicOutput_ForceSignalSelect_0"/>
+                                          <setting name="lcuLogicOutput_ForceSignal" value="LCU_IP_FORCE_SEL_INPUT0"/>
+                                          <setting name="lcuLogicOutput_ForceSignalAffect" value="false"/>
+                                       </struct>
+                                    </array>
+                                 </struct>
+                              </struct>
+                              <struct name="3">
+                                 <setting name="Name" value="PWMB_HS"/>
+                                 <setting name="lcuLogicOutput_LogicName" value="LCU_LOGIC_OUTPUT_3"/>
+                                 <setting name="lcuLogicOutput_HwInstID" value="LCU_IP_HW_INST_0"/>
+                                 <setting name="lcuLogicOutput_HwLcID" value="LCU_IP_HW_LC_0"/>
+                                 <setting name="lcuLogicOutput_HwOutputID" value="LCU_IP_HW_OUTPUT_3"/>
+                                 <setting name="lcuLogicOutput_LutControl" value="0xCCCC"/>
+                                 <setting name="lcuLogicOutput_LutRiseFilter" value="96"/>
+                                 <setting name="lcuLogicOutput_LutFallFilter" value="0"/>
+                                 <setting name="lcuLogicOutput_InterruptCallback" value="NULL_PTR"/>
+                                 <setting name="lcuLogicOutput_DebugMode" value="false"/>
+                                 <setting name="lcuLogicOutput_InvertOutput" value="true"/>
+                                 <setting name="lcuLogicOutput_LutDmaEnable" value="false"/>
+                                 <setting name="lcuLogicOutput_LutIntEnable" value="false"/>
+                                 <setting name="lcuLogicOutput_UsingForceSignal" value="false"/>
+                                 <struct name="lcuLogicOutput_ForceSignalConfiguration">
+                                    <setting name="Name" value="lcuLogicOutput_ForceSignalConfiguration"/>
+                                    <setting name="lcuLogicOutput_ForceClearMode" value="LCU_IP_CLEAR_FORCE_SIGNAL_IMMEDIATE"/>
+                                    <setting name="lcuLogicOutput_ForceSyncSelect" value="LCU_IP_SYNC_SEL_INPUT3"/>
+                                    <setting name="lcuLogicOutput_ForceDmaEnable" value="false"/>
+                                    <setting name="lcuLogicOutput_ForceIntEnable" value="false"/>
+                                    <array name="lcuLogicOutput_ForceSignalSelect">
+                                       <struct name="0">
+                                          <setting name="Name" value="lcuLogicOutput_ForceSignalSelect_0"/>
+                                          <setting name="lcuLogicOutput_ForceSignal" value="LCU_IP_FORCE_SEL_INPUT0"/>
+                                          <setting name="lcuLogicOutput_ForceSignalAffect" value="false"/>
+                                       </struct>
+                                    </array>
+                                 </struct>
+                              </struct>
+                              <struct name="4">
+                                 <setting name="Name" value="PWMC_LS"/>
+                                 <setting name="lcuLogicOutput_LogicName" value="LCU_LOGIC_OUTPUT_4"/>
+                                 <setting name="lcuLogicOutput_HwInstID" value="LCU_IP_HW_INST_0"/>
+                                 <setting name="lcuLogicOutput_HwLcID" value="LCU_IP_HW_LC_1"/>
+                                 <setting name="lcuLogicOutput_HwOutputID" value="LCU_IP_HW_OUTPUT_0"/>
+                                 <setting name="lcuLogicOutput_LutControl" value="0x5555"/>
+                                 <setting name="lcuLogicOutput_LutRiseFilter" value="96"/>
+                                 <setting name="lcuLogicOutput_LutFallFilter" value="0"/>
+                                 <setting name="lcuLogicOutput_InterruptCallback" value="NULL_PTR"/>
+                                 <setting name="lcuLogicOutput_DebugMode" value="false"/>
+                                 <setting name="lcuLogicOutput_InvertOutput" value="false"/>
+                                 <setting name="lcuLogicOutput_LutDmaEnable" value="false"/>
+                                 <setting name="lcuLogicOutput_LutIntEnable" value="false"/>
+                                 <setting name="lcuLogicOutput_UsingForceSignal" value="false"/>
+                                 <struct name="lcuLogicOutput_ForceSignalConfiguration">
+                                    <setting name="Name" value="lcuLogicOutput_ForceSignalConfiguration"/>
+                                    <setting name="lcuLogicOutput_ForceClearMode" value="LCU_IP_CLEAR_FORCE_SIGNAL_IMMEDIATE"/>
+                                    <setting name="lcuLogicOutput_ForceSyncSelect" value="LCU_IP_SYNC_SEL_INPUT4"/>
+                                    <setting name="lcuLogicOutput_ForceDmaEnable" value="false"/>
+                                    <setting name="lcuLogicOutput_ForceIntEnable" value="false"/>
+                                    <array name="lcuLogicOutput_ForceSignalSelect">
+                                       <struct name="0">
+                                          <setting name="Name" value="lcuLogicOutput_ForceSignalSelect_0"/>
+                                          <setting name="lcuLogicOutput_ForceSignal" value="LCU_IP_FORCE_SEL_INPUT0"/>
+                                          <setting name="lcuLogicOutput_ForceSignalAffect" value="false"/>
+                                       </struct>
+                                    </array>
+                                 </struct>
+                              </struct>
+                              <struct name="5">
+                                 <setting name="Name" value="PWMC_HS"/>
+                                 <setting name="lcuLogicOutput_LogicName" value="LCU_LOGIC_OUTPUT_5"/>
+                                 <setting name="lcuLogicOutput_HwInstID" value="LCU_IP_HW_INST_0"/>
+                                 <setting name="lcuLogicOutput_HwLcID" value="LCU_IP_HW_LC_1"/>
+                                 <setting name="lcuLogicOutput_HwOutputID" value="LCU_IP_HW_OUTPUT_1"/>
+                                 <setting name="lcuLogicOutput_LutControl" value="0xAAAA"/>
+                                 <setting name="lcuLogicOutput_LutRiseFilter" value="96"/>
+                                 <setting name="lcuLogicOutput_LutFallFilter" value="0"/>
+                                 <setting name="lcuLogicOutput_InterruptCallback" value="NULL_PTR"/>
+                                 <setting name="lcuLogicOutput_DebugMode" value="false"/>
+                                 <setting name="lcuLogicOutput_InvertOutput" value="true"/>
+                                 <setting name="lcuLogicOutput_LutDmaEnable" value="false"/>
+                                 <setting name="lcuLogicOutput_LutIntEnable" value="false"/>
+                                 <setting name="lcuLogicOutput_UsingForceSignal" value="false"/>
+                                 <struct name="lcuLogicOutput_ForceSignalConfiguration">
+                                    <setting name="Name" value="lcuLogicOutput_ForceSignalConfiguration"/>
+                                    <setting name="lcuLogicOutput_ForceClearMode" value="LCU_IP_CLEAR_FORCE_SIGNAL_IMMEDIATE"/>
+                                    <setting name="lcuLogicOutput_ForceSyncSelect" value="LCU_IP_SYNC_SEL_INPUT5"/>
+                                    <setting name="lcuLogicOutput_ForceDmaEnable" value="false"/>
+                                    <setting name="lcuLogicOutput_ForceIntEnable" value="false"/>
+                                    <array name="lcuLogicOutput_ForceSignalSelect">
+                                       <struct name="0">
+                                          <setting name="Name" value="lcuLogicOutput_ForceSignalSelect_0"/>
+                                          <setting name="lcuLogicOutput_ForceSignal" value="LCU_IP_FORCE_SEL_INPUT0"/>
+                                          <setting name="lcuLogicOutput_ForceSignalAffect" value="false"/>
+                                       </struct>
+                                    </array>
+                                 </struct>
+                              </struct>
+                              <struct name="6">
+                                 <setting name="Name" value="ENCODER_PROCESSING_O0"/>
+                                 <setting name="lcuLogicOutput_LogicName" value="LCU_LOGIC_OUTPUT_6"/>
+                                 <setting name="lcuLogicOutput_HwInstID" value="LCU_IP_HW_INST_1"/>
+                                 <setting name="lcuLogicOutput_HwLcID" value="LCU_IP_HW_LC_0"/>
+                                 <setting name="lcuLogicOutput_HwOutputID" value="LCU_IP_HW_OUTPUT_0"/>
+                                 <setting name="lcuLogicOutput_LutControl" value="0xAAAA"/>
+                                 <setting name="lcuLogicOutput_LutRiseFilter" value="5"/>
+                                 <setting name="lcuLogicOutput_LutFallFilter" value="5"/>
+                                 <setting name="lcuLogicOutput_InterruptCallback" value="NULL_PTR"/>
+                                 <setting name="lcuLogicOutput_DebugMode" value="false"/>
+                                 <setting name="lcuLogicOutput_InvertOutput" value="false"/>
+                                 <setting name="lcuLogicOutput_LutDmaEnable" value="false"/>
+                                 <setting name="lcuLogicOutput_LutIntEnable" value="false"/>
+                                 <setting name="lcuLogicOutput_UsingForceSignal" value="false"/>
+                                 <struct name="lcuLogicOutput_ForceSignalConfiguration">
+                                    <setting name="Name" value="lcuLogicOutput_ForceSignalConfiguration"/>
+                                    <setting name="lcuLogicOutput_ForceClearMode" value="LCU_IP_CLEAR_FORCE_SIGNAL_IMMEDIATE"/>
+                                    <setting name="lcuLogicOutput_ForceSyncSelect" value="LCU_IP_SYNC_SEL_INPUT6"/>
+                                    <setting name="lcuLogicOutput_ForceDmaEnable" value="false"/>
+                                    <setting name="lcuLogicOutput_ForceIntEnable" value="false"/>
+                                    <array name="lcuLogicOutput_ForceSignalSelect">
+                                       <struct name="0">
+                                          <setting name="Name" value="lcuLogicOutput_ForceSignalSelect_0"/>
+                                          <setting name="lcuLogicOutput_ForceSignal" value="LCU_IP_FORCE_SEL_INPUT0"/>
+                                          <setting name="lcuLogicOutput_ForceSignalAffect" value="false"/>
+                                       </struct>
+                                    </array>
+                                 </struct>
+                              </struct>
+                              <struct name="7">
+                                 <setting name="Name" value="ENCODER_PROCESSING_O1"/>
+                                 <setting name="lcuLogicOutput_LogicName" value="LCU_LOGIC_OUTPUT_7"/>
+                                 <setting name="lcuLogicOutput_HwInstID" value="LCU_IP_HW_INST_1"/>
+                                 <setting name="lcuLogicOutput_HwLcID" value="LCU_IP_HW_LC_0"/>
+                                 <setting name="lcuLogicOutput_HwOutputID" value="LCU_IP_HW_OUTPUT_1"/>
+                                 <setting name="lcuLogicOutput_LutControl" value="0xCCCC"/>
+                                 <setting name="lcuLogicOutput_LutRiseFilter" value="5"/>
+                                 <setting name="lcuLogicOutput_LutFallFilter" value="5"/>
+                                 <setting name="lcuLogicOutput_InterruptCallback" value="NULL_PTR"/>
+                                 <setting name="lcuLogicOutput_DebugMode" value="false"/>
+                                 <setting name="lcuLogicOutput_InvertOutput" value="false"/>
+                                 <setting name="lcuLogicOutput_LutDmaEnable" value="false"/>
+                                 <setting name="lcuLogicOutput_LutIntEnable" value="false"/>
+                                 <setting name="lcuLogicOutput_UsingForceSignal" value="false"/>
+                                 <struct name="lcuLogicOutput_ForceSignalConfiguration">
+                                    <setting name="Name" value="lcuLogicOutput_ForceSignalConfiguration"/>
+                                    <setting name="lcuLogicOutput_ForceClearMode" value="LCU_IP_CLEAR_FORCE_SIGNAL_IMMEDIATE"/>
+                                    <setting name="lcuLogicOutput_ForceSyncSelect" value="LCU_IP_SYNC_SEL_INPUT7"/>
+                                    <setting name="lcuLogicOutput_ForceDmaEnable" value="false"/>
+                                    <setting name="lcuLogicOutput_ForceIntEnable" value="false"/>
+                                    <array name="lcuLogicOutput_ForceSignalSelect">
+                                       <struct name="0">
+                                          <setting name="Name" value="lcuLogicOutput_ForceSignalSelect_0"/>
+                                          <setting name="lcuLogicOutput_ForceSignal" value="LCU_IP_FORCE_SEL_INPUT0"/>
+                                          <setting name="lcuLogicOutput_ForceSignalAffect" value="false"/>
+                                       </struct>
+                                    </array>
+                                 </struct>
+                              </struct>
+                              <struct name="8">
+                                 <setting name="Name" value="ENCODER_PROCESSING_O2"/>
+                                 <setting name="lcuLogicOutput_LogicName" value="LCU_LOGIC_OUTPUT_8"/>
+                                 <setting name="lcuLogicOutput_HwInstID" value="LCU_IP_HW_INST_1"/>
+                                 <setting name="lcuLogicOutput_HwLcID" value="LCU_IP_HW_LC_0"/>
+                                 <setting name="lcuLogicOutput_HwOutputID" value="LCU_IP_HW_OUTPUT_2"/>
+                                 <setting name="lcuLogicOutput_LutControl" value="0x4182"/>
+                                 <setting name="lcuLogicOutput_LutRiseFilter" value="4"/>
+                                 <setting name="lcuLogicOutput_LutFallFilter" value="4"/>
+                                 <setting name="lcuLogicOutput_InterruptCallback" value="NULL_PTR"/>
+                                 <setting name="lcuLogicOutput_DebugMode" value="false"/>
+                                 <setting name="lcuLogicOutput_InvertOutput" value="false"/>
+                                 <setting name="lcuLogicOutput_LutDmaEnable" value="false"/>
+                                 <setting name="lcuLogicOutput_LutIntEnable" value="false"/>
+                                 <setting name="lcuLogicOutput_UsingForceSignal" value="false"/>
+                                 <struct name="lcuLogicOutput_ForceSignalConfiguration">
+                                    <setting name="Name" value="lcuLogicOutput_ForceSignalConfiguration"/>
+                                    <setting name="lcuLogicOutput_ForceClearMode" value="LCU_IP_CLEAR_FORCE_SIGNAL_IMMEDIATE"/>
+                                    <setting name="lcuLogicOutput_ForceSyncSelect" value="LCU_IP_SYNC_SEL_INPUT8"/>
+                                    <setting name="lcuLogicOutput_ForceDmaEnable" value="false"/>
+                                    <setting name="lcuLogicOutput_ForceIntEnable" value="false"/>
+                                    <array name="lcuLogicOutput_ForceSignalSelect">
+                                       <struct name="0">
+                                          <setting name="Name" value="lcuLogicOutput_ForceSignalSelect_0"/>
+                                          <setting name="lcuLogicOutput_ForceSignal" value="LCU_IP_FORCE_SEL_INPUT0"/>
+                                          <setting name="lcuLogicOutput_ForceSignalAffect" value="false"/>
+                                       </struct>
+                                    </array>
+                                 </struct>
+                              </struct>
+                              <struct name="9">
+                                 <setting name="Name" value="ENCODER_PROCESSING_O3"/>
+                                 <setting name="lcuLogicOutput_LogicName" value="LCU_LOGIC_OUTPUT_9"/>
+                                 <setting name="lcuLogicOutput_HwInstID" value="LCU_IP_HW_INST_1"/>
+                                 <setting name="lcuLogicOutput_HwLcID" value="LCU_IP_HW_LC_0"/>
+                                 <setting name="lcuLogicOutput_HwOutputID" value="LCU_IP_HW_OUTPUT_3"/>
+                                 <setting name="lcuLogicOutput_LutControl" value="0x2814"/>
+                                 <setting name="lcuLogicOutput_LutRiseFilter" value="4"/>
+                                 <setting name="lcuLogicOutput_LutFallFilter" value="4"/>
+                                 <setting name="lcuLogicOutput_InterruptCallback" value="NULL_PTR"/>
+                                 <setting name="lcuLogicOutput_DebugMode" value="false"/>
+                                 <setting name="lcuLogicOutput_InvertOutput" value="false"/>
+                                 <setting name="lcuLogicOutput_LutDmaEnable" value="false"/>
+                                 <setting name="lcuLogicOutput_LutIntEnable" value="false"/>
+                                 <setting name="lcuLogicOutput_UsingForceSignal" value="false"/>
+                                 <struct name="lcuLogicOutput_ForceSignalConfiguration">
+                                    <setting name="Name" value="lcuLogicOutput_ForceSignalConfiguration"/>
+                                    <setting name="lcuLogicOutput_ForceClearMode" value="LCU_IP_CLEAR_FORCE_SIGNAL_IMMEDIATE"/>
+                                    <setting name="lcuLogicOutput_ForceSyncSelect" value="LCU_IP_SYNC_SEL_INPUT9"/>
+                                    <setting name="lcuLogicOutput_ForceDmaEnable" value="false"/>
+                                    <setting name="lcuLogicOutput_ForceIntEnable" value="false"/>
+                                    <array name="lcuLogicOutput_ForceSignalSelect">
+                                       <struct name="0">
+                                          <setting name="Name" value="lcuLogicOutput_ForceSignalSelect_0"/>
+                                          <setting name="lcuLogicOutput_ForceSignal" value="LCU_IP_FORCE_SEL_INPUT0"/>
+                                          <setting name="lcuLogicOutput_ForceSignalAffect" value="false"/>
+                                       </struct>
+                                    </array>
+                                 </struct>
+                              </struct>
+                           </array>
+                        </struct>
+                     </config_set>
+                  </instance>
+                  <instance name="Lpspi" uuid="be0f2f93-edc6-48cc-9710-ca5076b6e0d6" type="Lpspi" type_id="Lpspi" mode="lpspi" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
+                     <config_set name="Lpspi">
+                        <setting name="Name" value="Lpspi"/>
+                        <struct name="ConfigTimeSupport" quick_selection="Default">
+                           <setting name="POST_BUILD_VARIANT_USED" value="false"/>
+                           <setting name="IMPLEMENTATION_CONFIG_VARIANT" value="VARIANT-PRE-COMPILE"/>
+                        </struct>
+                        <struct name="SpiDriver">
+                           <setting name="Name" value="SpiDriver"/>
+                           <array name="SpiExternalDevice">
+                              <struct name="0">
+                                 <setting name="Name" value="SpiExternalDevice_0"/>
+                                 <setting name="SpiBaudrate" value="100000"/>
+                                 <setting name="SpiUseBaudrateConfig" value="false"/>
+                                 <array name="SpiBaudrateConfigRef"/>
+                                 <setting name="SpiCsIdentifier" value="PCS0"/>
+                                 <setting name="SpiCsPolarity" value="HIGH"/>
+                                 <setting name="SpiDataShiftEdge" value="LEADING"/>
+                                 <setting name="SpiHwUnit" value="CSIB0"/>
+                                 <setting name="SpiShiftClockIdleLevel" value="LOW"/>
+                                 <setting name="SpiDataWidth" value="8"/>
+                                 <setting name="SpiDefaultData" value="0"/>
+                                 <setting name="SpiTransferStart" value="MSB"/>
+                                 <setting name="SpiByteSwapTransfer" value="false"/>
+                                 <setting name="SpiTimeClk2Cs" value="0.0000001"/>
+                                 <setting name="SpiTimeCs2Clk" value="0.0000001"/>
+                                 <setting name="SpiTimeCs2Cs" value="0.0000002"/>
+                                 <array name="SpiTimeClk2Clk"/>
+                                 <setting name="SpiDeviceHalfDuplexSupport" value="false"/>
+                                 <setting name="SpiTransferWidth" value="TRANSFER_1_BIT"/>
+                                 <setting name="SpiHalfDuplexPinSelect" value="HALF_DUPLEX_SIN"/>
+                                 <setting name="SpiCsBehavior" value="CS_KEEP_ASSERTED"/>
+                                 <setting name="SpiDeviceDmaRepeatedTransferSupport" value="false"/>
+                                 <array name="SpiDmaRepeatedTransferNotification"/>
+                                 <setting name="SpiHostRequest" value="DISABLE"/>
+                              </struct>
+                           </array>
+                           <array name="SpiBaudrateConfig"/>
+                        </struct>
+                        <struct name="SpiGeneral">
+                           <setting name="Name" value="SpiGeneral"/>
+                           <setting name="SpiEnableUserModeSupport" value="false"/>
+                           <setting name="SpiEnableDmaFastTransferSupport" value="false"/>
+                           <setting name="SpiHalfDuplexModeSupport" value="false"/>
+                           <setting name="LpspiIpDevErrorDetect" value="false"/>
+                           <setting name="SpiGlobalDmaEnable" value="false"/>
+                           <setting name="SpiEnableLargeFrameSize" value="false"/>
+                           <setting name="SpiDmaRepeatedTransferEnable" value="false"/>
+                           <setting name="SpiTimeoutMethod" value="OSIF_COUNTER_DUMMY"/>
+                           <setting name="SpiTransmitTimeout" value="1"/>
+                           <array name="SpiPhyUnit">
+                              <struct name="0">
+                                 <setting name="Name" value="SpiPhyUnit_0"/>
+                                 <setting name="SpiPhyUnitMapping" value="LPSPI_1"/>
+                                 <setting name="SpiPinConfiguration" value="0"/>
+                                 <setting name="SpiSamplePoint" value="0"/>
+                                 <setting name="SpiPhyUnitClockFunctionalGroupRef" value="ClockConfig0"/>
+                                 <setting name="SpiPhyUnitMode" value="SPI_MASTER"/>
+                                 <setting name="SpiPhyUnitAsyncUseDma" value="false"/>
+                                 <array name="SpiPhyTxDmaChannel"/>
+                                 <array name="SpiPhyRxDmaChannel"/>
+                                 <array name="SpiMaxDmaFastTransfer"/>
+                              </struct>
+                           </array>
+                        </struct>
+                     </config_set>
+                  </instance>
+                  <instance name="Lpuart_Uart" uuid="3ed8529a-abd6-4d7b-9cdc-1248d72d3143" type="Lpuart_Uart" type_id="Lpuart_Uart" mode="ip" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
+                     <config_set name="Lpuart_Uart">
+                        <setting name="Name" value="Lpuart_Uart"/>
+                        <struct name="ConfigTimeSupport" quick_selection="Default">
+                           <setting name="POST_BUILD_VARIANT_USED" value="false"/>
+                           <setting name="IMPLEMENTATION_CONFIG_VARIANT" value="VARIANT-PRE-COMPILE"/>
+                        </struct>
+                        <struct name="GeneralConfiguration">
+                           <setting name="Name" value="GeneralConfiguration"/>
+                           <setting name="UartDevErrorDetect" value="false"/>
+                           <setting name="UartTimeoutMethod" value="OSIF_COUNTER_DUMMY"/>
+                           <setting name="UartTimeoutDuration" value="0"/>
+                           <setting name="UartDmaEnable" value="false"/>
+                           <setting name="UartCallbackCapability" value="false"/>
+                           <array name="UartCallback">
+                              <setting name="0" value=""/>
+                           </array>
+                           <array name="UartCallbackParam"/>
+                        </struct>
+                        <struct name="UartGlobalConfig">
+                           <setting name="Name" value="UartGlobalConfig"/>
+                           <array name="UartChannel">
+                              <struct name="0">
+                                 <setting name="Name" value="Uart6"/>
+                                 <setting name="UartHwUsing" value="LPUART_IP"/>
+                                 <setting name="UartClockFunctionalGroupRef" value="ClockConfig0"/>
+                                 <struct name="DetailModuleConfiguration">
+                                    <setting name="Name" value="DetailModuleConfiguration"/>
+                                    <setting name="UartHwChannel" value="LPUART_6"/>
+                                    <setting name="DesireBaudrate" value="LPUART_UART_BAUDRATE_115200"/>
+                                    <setting name="CustomBaudrateMantissa" value="1"/>
+                                    <setting name="CustomBaudrateDivisor" value="4"/>
+                                    <setting name="UartInteruptDmaMethod" value="LPUART_UART_IP_USING_INTERRUPTS"/>
+                                    <array name="UartDmaTxChannelRef"/>
+                                    <array name="UartDmaRxChannelRef"/>
+                                    <setting name="UartParityType" value="LPUART_UART_IP_PARITY_DISABLED"/>
+                                    <setting name="UartStopBitNumber" value="LPUART_UART_IP_ONE_STOP_BIT"/>
+                                    <setting name="UartWordLength" value="LPUART_UART_IP_8_BITS_PER_CHAR"/>
+                                    <setting name="UartInternalLoopbackEnable" value="false"/>
+                                    <setting name="UartTimeoutEnable" value="false"/>
+                                 </struct>
+                              </struct>
+                           </array>
+                        </struct>
+                     </config_set>
+                  </instance>
+                  <instance name="Siul2_Dio" uuid="c10a5081-d5b1-44a8-9d2e-3e0601b36bf4" type="Siul2_Dio" type_id="Siul2_Dio" mode="ip" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
+                     <config_set name="Siul2_Dio">
+                        <setting name="Name" value="Siul2_Dio"/>
+                        <struct name="ConfigTimeSupport">
+                           <setting name="POST_BUILD_VARIANT_USED" value="false"/>
+                           <setting name="IMPLEMENTATION_CONFIG_VARIANT" value="VARIANT-PRE-COMPILE"/>
+                        </struct>
+                        <struct name="DioGeneral">
+                           <setting name="Name" value="DioGeneral"/>
+                           <setting name="SIUL2DioIPDevErrorDetect" value="false"/>
+                        </struct>
+                     </config_set>
+                  </instance>
+                  <instance name="Siul2_Icu" uuid="9ad196cd-5800-41ac-bcf9-11a5a04a3dec" type="Siul2_Icu" type_id="Siul2_Icu" mode="ip" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
+                     <config_set name="Siul2_Icu">
+                        <setting name="Name" value="Siul2_Icu"/>
+                        <struct name="ConfigTimeSupport">
+                           <setting name="POST_BUILD_VARIANT_USED" value="false"/>
+                           <setting name="IMPLEMENTATION_CONFIG_VARIANT" value="VARIANT-POST-BUILD"/>
+                        </struct>
+                        <struct name="IcuConfigSet">
+                           <setting name="Name" value="Siul2ConfigSet"/>
+                           <setting name="IcuMaxChannel" value="1"/>
+                           <array name="IcuChannel">
+                              <struct name="0">
+                                 <setting name="Name" value="GD3000_INT"/>
+                                 <setting name="IcuChannelId" value="0"/>
+                                 <setting name="IcuChannelRef" value="/Siul2_Icu/Siul2_Icu/Siul2ConfigSet/IcuSiul2_0/IcuSiul2Channels_0"/>
+                                 <setting name="IcuDefaultStartEdge" value="ICU_RISING_EDGE"/>
+                                 <setting name="IcuMeasurementMode" value="ICU_MODE_SIGNAL_EDGE_DETECT"/>
+                                 <setting name="IcuOverflowNotification" value="NULL_PTR"/>
+                                 <array name="IcuSignalEdgeDetection">
+                                    <struct name="0">
+                                       <setting name="Name" value="IcuSignalEdgeDetection"/>
+                                       <array name="IcuSignalNotification">
+                                          <setting name="0" value="GD3000_INT_Handler"/>
+                                       </array>
+                                    </struct>
+                                 </array>
+                                 <array name="IcuSignalMeasurement"/>
+                                 <array name="IcuTimestampMeasurement"/>
+                              </struct>
+                           </array>
+                           <array name="IcuSiul2">
+                              <struct name="0">
+                                 <setting name="Name" value="IcuSiul2_0"/>
+                                 <setting name="IcuSiul2Instance" value="0"/>
+                                 <setting name="IcuEXT_ISR_InterruptFilterClockPrescaler" value="0"/>
+                                 <setting name="IcuEXT_ISR_AlternateInterruptFilterClockPrescaler" value="0"/>
+                                 <array name="IcuSiul2Channels">
+                                    <struct name="0">
+                                       <setting name="Name" value="IcuSiul2Channels_0"/>
+                                       <setting name="IcuSiul2Channel" value="7"/>
+                                       <setting name="Icu_EXT_ISR_IFERDigitalFilter" value="true"/>
+                                       <setting name="Icu_EXT_ISR_IFMCDigitalFilter" value="10"/>
+                                    </struct>
+                                 </array>
+                              </struct>
+                           </array>
+                           <array name="IcuHwInterruptConfigList">
+                              <struct name="0">
+                                 <setting name="Name" value="IcuHwInterruptConfigList_0"/>
+                                 <setting name="IcuIsrHwId" value="SIUL2_0_IRQ_CH_7"/>
+                              </struct>
+                           </array>
+                        </struct>
+                        <struct name="IcuGeneral">
+                           <setting name="Name" value="Siul2IcuGeneral"/>
+                           <setting name="IcuDevErrorDetect" value="false"/>
+                           <setting name="IcuEnableUserModeSupport" value="false"/>
+                        </struct>
+                     </config_set>
+                  </instance>
+                  <instance name="Trgmux_Ip" uuid="2a495a7a-1426-40a8-a0bd-bf93c448b689" type="Trgmux_Ip" type_id="Trgmux_Ip" mode="general" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
+                     <config_set name="Trgmux_Ip">
+                        <setting name="Name" value="Trgmux_Ip"/>
+                        <struct name="ConfigTimeSupport">
+                           <setting name="POST_BUILD_VARIANT_USED" value="false"/>
+                           <setting name="IMPLEMENTATION_CONFIG_VARIANT" value="VARIANT-POST-BUILD"/>
+                        </struct>
+                        <struct name="MclGeneral">
+                           <setting name="Name" value="General"/>
+                           <setting name="MclEnableUserModeSupport" value="false"/>
+                           <struct name="MclTrgMux">
+                              <setting name="Name" value="TrgMux"/>
+                              <setting name="MclEnableTrgMux" value="true"/>
+                              <setting name="MclEnableTrgMuxDevErrorDetect" value="false"/>
+                           </struct>
+                        </struct>
+                        <struct name="MclConfig">
+                           <setting name="Name" value="TrgMuxConfig"/>
+                           <array name="trgmuxInstaceList">
+                              <struct name="0">
+                                 <setting name="Name" value="trgmuxInstaceList_0"/>
+                                 <setting name="trgmuxHardwareInstance" value="TRGMUX_IP_HW_INST_0"/>
+                              </struct>
+                           </array>
+                           <array name="trgmuxLogicGroup">
+                              <struct name="0">
+                                 <setting name="Name" value="TST_TGMX_O12_B21"/>
+                                 <setting name="trgmuxLogicGroupHardwareInstance" value="TRGMUX_IP_HW_INST_0"/>
+                                 <setting name="trgmuxLogicGroup_Name" value="TRGMUX_IP_SIUL2_12_15"/>
+                                 <setting name="trgmuxLogicGroup_Lock" value="false"/>
+                                 <array name="trgmuxLogicTrigger">
+                                    <struct name="0">
+                                       <setting name="Name" value="trgmuxLogicTrigger_0"/>
+                                       <setting name="trgmuxLogicTrigger_Name" value="SA_TRGMUX_LOGIC_GROUP_0_TRIGGER_0"/>
+                                       <setting name="trgmuxLogicTrigger_Output" value="TRGMUX_IP_OUTPUT_SIUL2_12_15_OUT12"/>
+                                       <setting name="trgmuxLogicTrigger_Input" value="TRGMUX_IP_INPUT_EMIOS0_IPP_CH1"/>
+                                    </struct>
+                                 </array>
+                              </struct>
+                              <struct name="1">
+                                 <setting name="Name" value="TST_TGMX_O9_B18"/>
+                                 <setting name="trgmuxLogicGroupHardwareInstance" value="TRGMUX_IP_HW_INST_0"/>
+                                 <setting name="trgmuxLogicGroup_Name" value="TRGMUX_IP_SIUL2_8_11"/>
+                                 <setting name="trgmuxLogicGroup_Lock" value="false"/>
+                                 <array name="trgmuxLogicTrigger">
+                                    <struct name="0">
+                                       <setting name="Name" value="trgmuxLogicTrigger_0"/>
+                                       <setting name="trgmuxLogicTrigger_Name" value="SA_TRGMUX_LOGIC_GROUP_1_TRIGGER_0"/>
+                                       <setting name="trgmuxLogicTrigger_Output" value="TRGMUX_IP_OUTPUT_SIUL2_8_11_OUT9"/>
+                                       <setting name="trgmuxLogicTrigger_Input" value="TRGMUX_IP_INPUT_EMIOS0_IPP_CH4"/>
+                                    </struct>
+                                 </array>
+                              </struct>
+                              <struct name="2">
+                                 <setting name="Name" value="EMIOS_PWM_TO_LCU"/>
+                                 <setting name="trgmuxLogicGroupHardwareInstance" value="TRGMUX_IP_HW_INST_0"/>
+                                 <setting name="trgmuxLogicGroup_Name" value="TRGMUX_IP_LCU0_0"/>
+                                 <setting name="trgmuxLogicGroup_Lock" value="false"/>
+                                 <array name="trgmuxLogicTrigger">
+                                    <struct name="0">
+                                       <setting name="Name" value="trgmuxLogicTrigger_0"/>
+                                       <setting name="trgmuxLogicTrigger_Name" value="SA_TRGMUX_LOGIC_GROUP_2_TRIGGER_0"/>
+                                       <setting name="trgmuxLogicTrigger_Output" value="TRGMUX_IP_OUTPUT_LCU0_0_INP_I0"/>
+                                       <setting name="trgmuxLogicTrigger_Input" value="TRGMUX_IP_INPUT_EMIOS0_IPP_CH1"/>
+                                    </struct>
+                                    <struct name="1">
+                                       <setting name="Name" value="trgmuxLogicTrigger_1"/>
+                                       <setting name="trgmuxLogicTrigger_Name" value="SA_TRGMUX_LOGIC_GROUP_2_TRIGGER_1"/>
+                                       <setting name="trgmuxLogicTrigger_Output" value="TRGMUX_IP_OUTPUT_LCU0_0_INP_I1"/>
+                                       <setting name="trgmuxLogicTrigger_Input" value="TRGMUX_IP_INPUT_EMIOS0_IPP_CH2"/>
+                                    </struct>
+                                    <struct name="2">
+                                       <setting name="Name" value="trgmuxLogicTrigger_2"/>
+                                       <setting name="trgmuxLogicTrigger_Name" value="SA_TRGMUX_LOGIC_GROUP_2_TRIGGER_2"/>
+                                       <setting name="trgmuxLogicTrigger_Output" value="TRGMUX_IP_OUTPUT_LCU0_0_INP_I2"/>
+                                       <setting name="trgmuxLogicTrigger_Input" value="TRGMUX_IP_INPUT_EMIOS0_IPP_CH3"/>
+                                    </struct>
+                                 </array>
+                              </struct>
+                              <struct name="3">
+                                 <setting name="Name" value="ENCODER_LCU_TO_EMIOS"/>
+                                 <setting name="trgmuxLogicGroupHardwareInstance" value="TRGMUX_IP_HW_INST_0"/>
+                                 <setting name="trgmuxLogicGroup_Name" value="TRGMUX_IP_EMIOS0_CH5_9"/>
+                                 <setting name="trgmuxLogicGroup_Lock" value="false"/>
+                                 <array name="trgmuxLogicTrigger">
+                                    <struct name="0">
+                                       <setting name="Name" value="trgmuxLogicTrigger_0"/>
+                                       <setting name="trgmuxLogicTrigger_Name" value="SA_TRGMUX_LOGIC_GROUP_3_TRIGGER_0"/>
+                                       <setting name="trgmuxLogicTrigger_Output" value="TRGMUX_IP_OUTPUT_EMIOS0_CH5_9_IPP_IND_CH5"/>
+                                       <setting name="trgmuxLogicTrigger_Input" value="TRGMUX_IP_INPUT_LCU1_LC0_OUT_I2"/>
+                                    </struct>
+                                    <struct name="1">
+                                       <setting name="Name" value="trgmuxLogicTrigger_1"/>
+                                       <setting name="trgmuxLogicTrigger_Name" value="SA_TRGMUX_LOGIC_GROUP_3_TRIGGER_1"/>
+                                       <setting name="trgmuxLogicTrigger_Output" value="TRGMUX_IP_OUTPUT_EMIOS0_CH5_9_IPP_IND_CH6"/>
+                                       <setting name="trgmuxLogicTrigger_Input" value="TRGMUX_IP_INPUT_LCU1_LC0_OUT_I3"/>
+                                    </struct>
+                                 </array>
+                              </struct>
+                              <struct name="4">
+                                 <setting name="Name" value="ENCODER_PINS_TO_LCU"/>
+                                 <setting name="trgmuxLogicGroupHardwareInstance" value="TRGMUX_IP_HW_INST_0"/>
+                                 <setting name="trgmuxLogicGroup_Name" value="TRGMUX_IP_LCU1_0"/>
+                                 <setting name="trgmuxLogicGroup_Lock" value="false"/>
+                                 <array name="trgmuxLogicTrigger">
+                                    <struct name="0">
+                                       <setting name="Name" value="trgmuxLogicTrigger_0"/>
+                                       <setting name="trgmuxLogicTrigger_Name" value="SA_TRGMUX_LOGIC_GROUP_4_TRIGGER_0"/>
+                                       <setting name="trgmuxLogicTrigger_Output" value="TRGMUX_IP_OUTPUT_LCU1_0_INP_I0"/>
+                                       <setting name="trgmuxLogicTrigger_Input" value="TRGMUX_IP_INPUT_SIUL2_IN13"/>
+                                    </struct>
+                                    <struct name="1">
+                                       <setting name="Name" value="trgmuxLogicTrigger_1"/>
+                                       <setting name="trgmuxLogicTrigger_Name" value="SA_TRGMUX_LOGIC_GROUP_4_TRIGGER_1"/>
+                                       <setting name="trgmuxLogicTrigger_Output" value="TRGMUX_IP_OUTPUT_LCU1_0_INP_I1"/>
+                                       <setting name="trgmuxLogicTrigger_Input" value="TRGMUX_IP_INPUT_SIUL2_IN14"/>
+                                    </struct>
+                                 </array>
+                              </struct>
+                           </array>
+                        </struct>
+                     </config_set>
+                  </instance>
+                  <instance name="ammclib_1" uuid="c62331e3-d827-4685-bfce-6aa466c6fc14" type="platform.middleware.ammclib" type_id="ammclib" mode="general" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
+                     <config_set name="ammclib_cfg_set" quick_selection="ammclib_default">
+                        <setting name="ammclib_fixedPoint" value="true"/>
+                        <setting name="ammclib_float" value="true"/>
+                        <setting name="ammclib_defaultImpl" value="SWLIBS_DEFAULT_IMPLEMENTATION_FLT"/>
+                     </config_set>
+                  </instance>
+               </instances>
+            </functional_group>
+         </functional_groups>
+         <components>
+            <component name="system" uuid="dad901f7-0eee-486e-b501-0915a8dc0834" type_id="system">
+               <config_set_global name="SystemModel" quick_selection="Default">
+                  <setting name="Name" value="SystemModel"/>
+                  <setting name="EcvdGenerationMethod" value="INDIVIDUAL"/>
+                  <setting name="EcvdOutputPath" value=""/>
+                  <setting name="EcvdGenerationTrigger" value="Generate Configuration"/>
+                  <setting name="SyncFunctionalGroups" value="true"/>
+                  <setting name="IgnoreComponentSuffix" value="true"/>
+                  <setting name="ComponentGenerationMethod" value="EcucPostBuildVariants"/>
+                  <setting name="DefaultFunctionalGroup" value="BOARD_InitPeripherals"/>
+                  <struct name="PostBuildSelectable" quick_selection="Default">
+                     <setting name="Name" value="PostBuildSelectable"/>
+                     <array name="PredefinedVariants">
+                        <struct name="0">
+                           <setting name="Name" value="BOARD_InitPeripherals"/>
+                           <setting name="Path" value="/system/SystemModel/PostBuildSelectable/BOARD_InitPeripherals"/>
+                           <array name="PostBuildVariantCriterionValues"/>
+                        </struct>
+                     </array>
+                  </struct>
+                  <struct name="Criterions" quick_selection="Default">
+                     <setting name="Name" value="Criterions"/>
+                     <array name="PostBuildVariantCriterions"/>
+                  </struct>
+               </config_set_global>
+            </component>
+         </components>
+      </periphs>
+      <serdes name="SERDES" version="1.0" enabled="false" update_project_code="true">
+         <generated_project_files/>
+         <components/>
+      </serdes>
+   </tools>
+</configuration>
