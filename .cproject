@@ -257,7 +257,7 @@
 	<storageModule moduleId="org.eclipse.embsys" parent_project="true" register_architecture="" register_board="---  none ---" register_chip="" register_core="" register_vendor=""/>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 	<storageModule moduleId="com.nxp.s32ds.cle.uct.core">
-		<sdkComponents>platform.driver.rte_mcu;platform.driver.pins;platform.driver.rte_port;platform.driver.osif;platform.driver.det;platform.driver.rte_osif;platform.driver.siul2_dio;platform.driver.rte_dio;platform.driver.siul2_icu;platform.driver.rte_icu;platform.driver.trgmux;platform.driver.rte_mcl;platform.driver.adc_sar;platform.driver.rte_adc;platform.driver.lpspi;platform.driver.rte_spi;platform.driver.emios_pwm;platform.driver.rte_pwm;platform.driver.emios_mcl;platform.driver.lpuart_uart;platform.driver.rte_uart;platform.driver.lcu;platform.driver.IntCtrl_Ip;platform.driver.bctu;platform.driver.emios_icu;platform.driver.siul2_port;platform.driver.clock;platform.middleware.ammclib</sdkComponents>
+		<sdkComponents>platform.driver.rte_mcu;platform.driver.pins;platform.driver.rte_port;platform.driver.osif;platform.driver.det;platform.driver.rte_osif;platform.driver.siul2_dio;platform.driver.rte_dio;platform.driver.siul2_icu;platform.driver.rte_icu;platform.driver.trgmux;platform.driver.rte_mcl;platform.driver.adc_sar;platform.driver.rte_adc;platform.driver.lpspi;platform.driver.rte_spi;platform.driver.emios_pwm;platform.driver.rte_pwm;platform.driver.emios_mcl;platform.driver.lpuart_uart;platform.driver.rte_uart;platform.driver.lcu;platform.driver.IntCtrl_Ip;platform.driver.bctu;platform.driver.emios_icu;platform.driver.siul2_port;platform.driver.clock;platform.middleware.ammclib;platform.middleware.S32K3xx_AMMCLIB</sdkComponents>
 	</storageModule>
 	<storageModule moduleId="com.nxp.s32ds.cle.uct.internal.core.toolchainSettings">
 		<COND_TOOLCHAIN_LIBRARIES/>
@@ -267,7 +267,7 @@
 		<COND_TOOLCHAIN_CUSTOM_OPTION/>
 	</storageModule>
 	<storageModule moduleId="com.nxp.s32ds.cle.uct.internal.core.toolchainScriptProfile">
-		<COND_TOOLCHAIN_COMPONENTS_OPTION>COPY=platform.driver.siul2_dio;platform.driver.emios_icu;platform.driver.lcu;platform.driver.trgmux;platform.driver.clock;platform.driver.osif;platform.driver.emios_mcl;platform.driver.IntCtrl_Ip;platform.driver.bctu;platform.driver.siul2_icu;platform.driver.emios_pwm;platform.middleware.ammclib;platform.driver.lpuart_uart;platform.driver.siul2_port;platform.driver.adc_sar;platform.driver.lpspi</COND_TOOLCHAIN_COMPONENTS_OPTION>
+		<COND_TOOLCHAIN_COMPONENTS_OPTION>COPY=platform.driver.siul2_dio;platform.driver.emios_icu;platform.driver.lcu;platform.driver.trgmux;platform.driver.clock;platform.driver.osif;platform.driver.emios_mcl;platform.driver.IntCtrl_Ip;platform.middleware.S32K3xx_AMMCLIB;platform.driver.bctu;platform.driver.siul2_icu;platform.driver.emios_pwm;platform.driver.lpuart_uart;platform.driver.siul2_port;platform.driver.adc_sar;platform.driver.lpspi</COND_TOOLCHAIN_COMPONENTS_OPTION>
 	</storageModule>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>

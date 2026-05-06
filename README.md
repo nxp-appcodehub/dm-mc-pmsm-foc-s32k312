@@ -3,11 +3,11 @@
 
 ## PMSM Motor Control Sensorless dual Shunt FOC on FRDM-A-S32K312
 
-This example demonstrates a sensorless Field Oriented Control (FOC) implementation for Permanent Magnet Synchronous Motor (PMSM) control using dual shunt current sensing on the NXP [DEVKIT-MOTORGD](https://www.nxp.com/design/design-center/development-boards-and-designs/automotive-development-platforms/hardware-tools-and-accessories/motor-control-shield-for-devkit:DEVKIT-MOTORGD) and S32K312 microcontroller.
+This example demonstrates a sensorless Field Oriented Control (FOC) implementation for Permanent Magnet Synchronous Motor (PMSM) using dual shunt current sensing on the NXP [DEVKIT-MOTORGD](https://www.nxp.com/design/design-center/development-boards-and-designs/automotive-development-platforms/hardware-tools-and-accessories/motor-control-shield-for-devkit:DEVKIT-MOTORGD) and S32K312 microcontroller.
 
 The demo is based on the [AN13767 3-phase Sensorless PMSM Motor Control Kit with S32K344 using RTD Low Level API](https://www.nxp.com/webapp/Download?colCode=AN13767), more details about the implementation can be found in the application note.
-The complete setup with K312 EVB, Motor Control Shield and Sunrise motor is pictured below:
-[<br><img src="images/K312_MC_KIT.png" width="600"/>](./images/K312_MC_KIT.png)
+The complete setup with K312 EVB, DEVKIT-MOTORGD Shield and Sunrise motor is pictured below:
+[<p><img src="images/K312_MC_KIT.png" width="600"/></p>](./images/K312_MC_KIT.png)
 
 #### Boards: FRDM-A-S32K312, DEVKIT-MOTORGD
 #### Categories: Motor Control
@@ -21,12 +21,12 @@ The complete setup with K312 EVB, Motor Control Shield and Sunrise motor is pict
 4. [Results](#step4)
 5. [FAQs](#step5)
 6. [Support](#step6)
-6. [Release Notes](#step7)
+7. [Release Notes](#step7)
 
 ## 1. Software and Tools<a name="step1"></a>
 This example was developed using the FRDM Automotive Bundle for S32K3. To download and install the complete software and tools ecosystem, use the following link:
 - [S32K3 FRDM Automotive Board Installation Package](https://www.nxp.com/app-autopackagemgr/automotive-software-package-manager:AUTO-SW-PACKAGE-MANAGER?currentTab=0&selectedDevices=S32K3&applicationVersionID=156)
-- [Automotive Math and Motor Control Library (AMMCLib) Rev 1.1.43](#AMMCLib)
+- [Automotive Math and Motor Control Library (AMMCLib) Rev 1.1.44](#AMMCLib)
 - [FreeMASTER Run-Time Debugging Tool](https://www.nxp.com/design/design-center/software/development-software/freemaster-run-time-debugging-tool:FREEMASTER)
 
 ## 2. Hardware<a name="step2"></a>
@@ -34,36 +34,36 @@ This example was developed using the FRDM Automotive Bundle for S32K3. To downlo
 - 12V Power Supply
 - USB Type-C cable
 - [FRDM-A-S32K312](https://www.nxp.com/design/design-center/development-boards-and-designs/FRDM-A-S32K312)
-[<br><img src="https://www.nxp.com/assets/images/en/dev-board-image/FRDM-A-S32K312-LEFT.jpg" width="400"/></p>](images/FRDM-A-S32K312.png)
-- [DEVKIT-MOTORGD <br><img src="https://www.nxp.com/assets/images/en/block-diagrams/DEVKIT-MOTORGD.jpg" width="400"/>](https://www.nxp.com/design/design-center/development-boards-and-designs/automotive-development-platforms/hardware-tools-and-accessories/motor-control-shield-for-devkit:DEVKIT-MOTORGD)
-- Sunrise Motor from [BLDC-KIT <br><img src="https://www.nxp.com/assets/images/en/dev-board-image/BLDC_KIT-IMG-ISO.jpg" width="400"/>](https://www.nxp.com/design/design-center/development-boards-and-designs/BLDC-KIT)
+[<p><img src="https://www.nxp.com/assets/images/en/dev-board-image/FRDM-A-S32K312-LEFT.jpg" width="400"/></p>](images/FRDM-A-S32K312.png)
+- [DEVKIT-MOTORGD <p><img src="https://www.nxp.com/assets/images/en/block-diagrams/DEVKIT-MOTORGD.jpg" width="400"/></p>](https://www.nxp.com/design/design-center/development-boards-and-designs/automotive-development-platforms/hardware-tools-and-accessories/motor-control-shield-for-devkit:DEVKIT-MOTORGD)
+- Sunrise Motor from [BLDC-KIT <p><img src="https://www.nxp.com/assets/images/en/dev-board-image/BLDC_KIT-IMG-ISO.jpg" width="400"/></p>](https://www.nxp.com/design/design-center/development-boards-and-designs/BLDC-KIT)
 
 ## 3. Setup<a name="step3"></a>
 ### 3.1 Import the project to S32 Design Studio IDE
 
 1. Open S32 Design Studio IDE, in the Dashboard Panel, choose **Import project from Application Code Hub**.
-   [<br><img src="images/import_project_1.png" width="400"/></p>](./images/import_project_1.png)
+   [<p><img src="images/import_project_1.png" width="400"/></p>](./images/import_project_1.png)
 
-2. Find the demo by searching the name directly.
-    [<br><img src="images/import_project_2.png" width="600"/></p>](./images/import_project_2.png)
-    Open the project, click the **GitHub link**, S32 Design Studio IDE will automatically retrieve project attributes then click **Next>**.
-    [<br><img src="images/import_project_3.png" width="600"/></p>](./images/import_project_3.png)
+2. Find the demo by searching: [dm-mc-pmsm-foc-s32k312](https://mcuxpresso.nxp.com/appcodehub?search=dm-mc-pmsm-foc-s32k312)
+3. Open the project, click the **GitHub link**, S32 Design Studio IDE will automatically retrieve project attributes, then click **Next>**.
+    [<p><img src="images/import_project_3.png" width="600"/></p>](./images/import_project_3.png)
 
-3. Select **main** branch and then click **Next>**.
+4. Select **main** branch and then click **Next>**.
 
-4. Select your local path for the repo in **Destination->Directory:** window. The S32 Design Studio IDE will clone the repo into this path, click **Next>**.
+5. Select your local path for the repo in **Destination->Directory:** window. The S32 Design Studio IDE will clone the repo into this path, click **Next>**.
 
-5. Select **Import existing Eclipse projects** then click **Next>**.
+6. Select **Import existing Eclipse projects** then click **Next>**.
 
-6. Select the project in this repo (only one project in this repo) then click **Finish**.
+7. Select the project in this repo (only one project in this repo) then click **Finish**.
 
-### 3.2 Generating, building and running the example application
-1. In Project Explorer, right-click the project and select **Update Code and Build Project**. This will generate the configuration (Pins, Clocks, Peripherals), update the source code and build the project using the active configuration (e.g. Debug_FLASH).
+### 3.2 Generating, Building and Running the Example
+1. In Project Explorer, right-click the project and select **Update Code and Build Project**. This will generate the configuration (Pins, Clocks, Peripherals), update the source code and build the project using the active configuration (e.g., Debug_FLASH).
 Make sure the build completes successfully and the *.elf file is generated without errors.
-[<br><img src="images/update_and_build.png" width="400"/><br>](./images/update_and_build.png)
+[<p><img src="images/update_and_build.png" width="200"/></p>](./images/update_and_build.png)
 Press **Yes** in the **SDK Component Management** pop-up window to continue.
 
-2. Go to Debug and select Debug Configurations. There will be a debug configuration for this project:
+2. Go to **Debug** and select **Debug Configurations**. There will be a debug configuration for this project:
+[<p><img src="images/Debug_config.png" width="200"/></p>](./images/Debug_config.png)
 
         Configuration Name                  Description
         -------------------------------     -----------------------
@@ -73,8 +73,9 @@ Press **Yes** in the **SDK Component Management** pop-up window to continue.
     Use the controls to control the program flow.
 
 ### 3.3 Connecting the Hardware
-1. Insert the DEVKIT-MOTORGD motor control shield on top of the FRDM-A-S32K312 board, check the pins alignment are correct and then press on the connectors firmly.
-2. Check the location of User Buttons, RGBLED, 12 Vin DC power, USB Type-C connector, Motor Phases, Hall connector JP1: [<br><img src="images/K312_MC_KIT_TOP_A.JPG" width="600"/></p>](./images/K312_MC_KIT_TOP_A.JPG)
+1. Insert the DEVKIT-MOTORGD motor control shield on top of the FRDM-A-S32K312 board, check that the pin alignment is correct and then press on the connectors firmly.
+2. Check the location of User Buttons, RGBLED, 12 Vin DC power, USB Type-C connector, Motor Phases, Hall connector JP1:
+[<p><img src="images/K312_MC_KIT_TOP_A.JPG" width="600"/></p>](./images/K312_MC_KIT_TOP_A.JPG)
     - Connect 12V DC power supply to the board via the 12V power connector.
     - Plug the USB Type-C cable to the board for debugging and communication.
     - Insert the motor phases (A,B,C) to the DEVKIT-MOTORGD motor control shield.
@@ -95,31 +96,36 @@ IMPORTANT - Read before starting the motor:
 ## 4. Results<a name="step4"></a>
 1. Open FreeMASTER Run-Time Debugging Tool and establish a connection to the target board via USB Type-C cable.
 2. Open FreeMASTER_control/S32K_PMSM_Sensorless.pmpx project file in FreeMASTER.
-3. Click on **"GO"** button to establish communication with the target board: [<br><img src="images/FreeMASTER_Connect.png " width="600"/></p>](./images/FreeMASTER_Connect.png)
-4. Go to App Control Tab and Press **"ON"** button to start the motor, set the Speed_Required value to desired motor speed (1000RPM):[<br><img src="images/FreeMASTER_Running.png" width="600"/></p>](./images/FreeMASTER_Running.png)
-5. Observe the motor iABC current waveforms in real-time on the FreeMASTER: [<br><img src="images/FreeMASTER_Waveforms.png" width="600"/></p>](./images/FreeMASTER_Waveforms.png)
+3. Click on **"GO"** button to establish communication with the target board:
+[<p><img src="images/FreeMASTER_Connect.png" width="600"/></p>](./images/FreeMASTER_Connect.png)
+4. Go to the App Control tab and press the **"ON"** button to start the motor, set the Speed_Required value to the desired motor speed (1000RPM):
+[<p><img src="images/FreeMASTER_Running.png" width="600"/></p>](./images/FreeMASTER_Running.png)
+5. Observe the motor iABC current waveforms in real-time on the FreeMASTER:
+[<p><img src="images/FreeMASTER_Waveforms.png" width="600"/></p>](./images/FreeMASTER_Waveforms.png)
 
-
-## 5. FAQ<a name="step5"></a>
+## 5. FAQs<a name="step5"></a>
 ### Common Issues and Solutions
-```markdown
+```
 Does FreeMASTER connect? 
 ├─ NO → Check USB cable, COM port, firmware loaded
 └─ YES → Is "Fault" displayed?
     ├─ YES → Check fault code in FreeMASTER → Faults & Trips tab
     │   ├─ Overcurrent → Reduce current limit, check motor wiring
     │   ├─ Overvoltage/Undervoltage → Check 12V supply is within range
-    │   ├─ Ia, Ib or Ic → See Motor Phases connection are correct
-    │   ├─ GD3000 → check gate driver supply voltage and Status0 value
+    │   ├─ Ia, Ib or Ic → Check that motor phase connections are correct
+    │   ├─ GD3000 → Check gate driver supply voltage and Status0 value
     │   └─ FOC → Verify motor shaft is free to rotate
     └─ NO → Check "ON" button pressed, Speed_Required > 0
 ```
 
 - After loading the project, there is a message "NXP GCC 10.2 compiler not found":
-  - Right-click on the project and select **Quick Fix** to install the required compiler: [<br><img src="images/S32DS_Qfix.png" width="600"/></p>](./images/S32DS_Qfix.png)
-  - Alternatively, navigate to **S32DS Extensions and Updates > NXP GCC 10.2 > Install** and add the NXP GCC 10.2 compiler: [<br><img src="images/S32DS_GCC.png" width="600"/></p>](./images/S32DS_GCC.png)
+  - Right-click on the project and select **Quick Fix** to install the required compiler:
+[<p><img src="images/S32DS_Qfix.png" width="600"/></p>](./images/S32DS_Qfix.png)
+  - Alternatively, navigate to **S32DS Extensions and Updates > NXP GCC 10.2 > Install** and add the NXP GCC 10.2 compiler:
+[<p><img src="images/S32DS_GCC.png" width="600"/></p>](./images/S32DS_GCC.png)
 - After loading the project, there is a message "Path to collateral manifest does not exist ${S32K3xx_AMMCLIB}"
-  - Install AMMCLIB<a name="AMMCLib"></a> from **S32DS Extensions and Updates > AMMCLIB for S32K3xx/S32M27x > Install** [<br><img src="images/S32DS_AMMCLIB.png" width="600"/></p>](./images/S32DS_AMMCLIB.png)
+  - Install AMMCLIB<a name="AMMCLib"></a> from **S32DS Extensions and Updates > AMMCLIB for S32K3xx/S32M27x > Install**
+[<p><img src="images/S32DS_AMMCLIB.png" width="600"/></p>](./images/S32DS_AMMCLIB.png)
 
 ## 6. Support<a name="step6"></a>
 * [AN13767 3-phase Sensorless PMSM Motor Control Kit with S32K344 using RTD Low Level API.](https://www.nxp.com/webapp/Download?colCode=AN13767)
@@ -128,7 +134,7 @@ Does FreeMASTER connect?
 
 <!----- Boards ----->
 [![Board badge](https://img.shields.io/badge/Board-FRDM&ndash;A&ndash;S32K312-blue)](https://www.nxp.com/design/design-center/development-boards-and-designs/S32K312MINI-EVB)
-[![Board badge](https://img.shields.io/badge/Board-DEVKIT-MOTORGD&ndash)](https://www.nxp.com/design/design-center/development-boards-and-designs/automotive-development-platforms/hardware-tools-and-accessories/motor-control-shield-for-devkit:DEVKIT-MOTORGD)
+[![Board badge](https://img.shields.io/badge/Board-DEVKIT&ndash;MOTORGD-blue)](https://www.nxp.com/design/design-center/development-boards-and-designs/automotive-development-platforms/hardware-tools-and-accessories/motor-control-shield-for-devkit:DEVKIT-MOTORGD)
 
 <!----- Categories ----->
 [![Category badge](https://img.shields.io/badge/Category-MOTOR%20CONTROL-yellowgreen)](https://mcuxpresso.nxp.com/appcodehub?category=motor_control)
@@ -146,7 +152,7 @@ Does FreeMASTER connect?
 
 Questions regarding the content/correctness of this example can be entered as Issues within this GitHub repository.
 
->**Warning**: For more general technical questions regarding NXP Microcontrollers and the difference in expected functionality, enter your questions on the [NXP Community Forum](https://community.nxp.com/)
+>**Note**: For more general technical questions regarding NXP Microcontrollers and the difference in expected functionality, enter your questions on the [NXP Community Forum](https://community.nxp.com/)
 
 [![Follow us on Youtube](https://img.shields.io/badge/Youtube-Follow%20us%20on%20Youtube-red.svg)](https://www.youtube.com/NXP_Semiconductors)
 [![Follow us on LinkedIn](https://img.shields.io/badge/LinkedIn-Follow%20us%20on%20LinkedIn-blue.svg)](https://www.linkedin.com/company/nxp-semiconductors)
@@ -157,3 +163,4 @@ Questions regarding the content/correctness of this example can be entered as Is
 | Version | Description / Update                           | Date                        |
 |:-------:|------------------------------------------------|----------------------------:|
 | 1.0     | Initial release on Application Code Hub        | February 27<sup>th</sup> 2026 |
+| 1.1     | Updated to support AMMCLIB v1.1.44             | May 7<sup>th</sup> 2026 |
