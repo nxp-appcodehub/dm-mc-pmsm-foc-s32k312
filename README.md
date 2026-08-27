@@ -1,8 +1,7 @@
 # NXP Application Code Hub
 [<img src="https://mcuxpresso.nxp.com/static/icon/nxp-logo-color.svg" width="100"/>](https://www.nxp.com)
 
-## PMSM Motor Control Sensorless dual Shunt FOC on FRDM-A-S32K312
-
+## Motor Control PMSM Sensorless dual Shunt FOC
 This example demonstrates a sensorless Field Oriented Control (FOC) implementation for Permanent Magnet Synchronous Motor (PMSM) using dual shunt current sensing on the NXP [DEVKIT-MOTORGD](https://www.nxp.com/design/design-center/development-boards-and-designs/automotive-development-platforms/hardware-tools-and-accessories/motor-control-shield-for-devkit:DEVKIT-MOTORGD) and S32K312 microcontroller.
 
 The demo is based on the [AN13767 3-phase Sensorless PMSM Motor Control Kit with S32K344 using RTD Low Level API](https://www.nxp.com/webapp/Download?colCode=AN13767), more details about the implementation can be found in the application note.
@@ -24,9 +23,9 @@ The complete setup with K312 EVB, DEVKIT-MOTORGD Shield and Sunrise motor is pic
 7. [Release Notes](#step7)
 
 ## 1. Software and Tools<a name="step1"></a>
-This example was developed using the FRDM Automotive Bundle for S32K3. To download and install the complete software and tools ecosystem, use the following link:
-- [S32K3 FRDM Automotive Board Installation Package](https://www.nxp.com/app-autopackagemgr/automotive-software-package-manager:AUTO-SW-PACKAGE-MANAGER?currentTab=0&selectedDevices=S32K3&applicationVersionID=156)
-- [Automotive Math and Motor Control Library (AMMCLib) Rev 1.1.44](#AMMCLib)
+This example was developed using the FRDM Automotive Bundle for S32K3 + S32M27. To download and install the complete software and tools ecosystem, use the following link:
+- [ FRDM Automotive S32K3 + S32M27 Board Installation Package](https://www.nxp.com/app-autopackagemgr/automotive-software-package-manager:AUTO-SW-PACKAGE-MANAGER?currentTab=0&selectedDevices=S32K3&applicationVersionID=203)
+- [Automotive Math and Motor Control Library (AMMCLib) Rev 1.1.45](#AMMCLib)
 - [FreeMASTER Run-Time Debugging Tool](https://www.nxp.com/design/design-center/software/development-software/freemaster-run-time-debugging-tool:FREEMASTER)
 
 ## 2. Hardware<a name="step2"></a>
@@ -34,7 +33,7 @@ This example was developed using the FRDM Automotive Bundle for S32K3. To downlo
 - 12V Power Supply
 - USB Type-C cable
 - [FRDM-A-S32K312](https://www.nxp.com/design/design-center/development-boards-and-designs/FRDM-A-S32K312)
-[<p><img src="https://www.nxp.com/assets/images/en/dev-board-image/FRDM-A-S32K312-LEFT.jpg" width="400"/></p>](images/FRDM-A-S32K312.png)
+ [<p><img src="https://www.nxp.com/assets/images/en/dev-board-image/FRDM-A-S32K312-LEFT.jpg" width="400"/></p>](https://www.nxp.com/assets/images/en/dev-board-image/FRDM-A-S32K312-LEFT.jpg)
 - [DEVKIT-MOTORGD <p><img src="https://www.nxp.com/assets/images/en/block-diagrams/DEVKIT-MOTORGD.jpg" width="400"/></p>](https://www.nxp.com/design/design-center/development-boards-and-designs/automotive-development-platforms/hardware-tools-and-accessories/motor-control-shield-for-devkit:DEVKIT-MOTORGD)
 - Sunrise Motor from [BLDC-KIT <p><img src="https://www.nxp.com/assets/images/en/dev-board-image/BLDC_KIT-IMG-ISO.jpg" width="400"/></p>](https://www.nxp.com/design/design-center/development-boards-and-designs/BLDC-KIT)
 
@@ -133,8 +132,8 @@ Does FreeMASTER connect?
 #### Project Metadata
 
 <!----- Boards ----->
-[![Board badge](https://img.shields.io/badge/Board-FRDM&ndash;A&ndash;S32K312-blue)](https://www.nxp.com/design/design-center/development-boards-and-designs/S32K312MINI-EVB)
-[![Board badge](https://img.shields.io/badge/Board-DEVKIT&ndash;MOTORGD-blue)](https://www.nxp.com/design/design-center/development-boards-and-designs/automotive-development-platforms/hardware-tools-and-accessories/motor-control-shield-for-devkit:DEVKIT-MOTORGD)
+[![Board badge](https://img.shields.io/badge/Board-FRDM&ndash;A&ndash;S32K312-blue)](https://mcuxpresso.nxp.com/appcodehub?boards=FRDM-A-S32K312)
+[![Board badge](https://img.shields.io/badge/Board-DEVKIT&ndash;MOTORGD-blue)](https://mcuxpresso.nxp.com/appcodehub?ebhubHw=devkit-motorgd)
 
 <!----- Categories ----->
 [![Category badge](https://img.shields.io/badge/Category-MOTOR%20CONTROL-yellowgreen)](https://mcuxpresso.nxp.com/appcodehub?category=motor_control)
@@ -160,7 +159,8 @@ Questions regarding the content/correctness of this example can be entered as Is
 [![Follow us on Twitter](https://img.shields.io/badge/X-Follow%20us%20on%20X-black.svg)](https://x.com/NXP)
 
 ## 7. Release Notes<a name="step7"></a>
-| Version | Description / Update                           | Date                        |
-|:-------:|------------------------------------------------|----------------------------:|
-| 1.0     | Initial release on Application Code Hub        | February 27<sup>th</sup> 2026 |
-| 1.1     | Updated to support AMMCLIB v1.1.44             | May 7<sup>th</sup> 2026 |
+| Version | Description / Update                           | Date                             |
+|:-------:|------------------------------------------------|---------------------------------:|
+| 1.0     | Initial release on Application Code Hub        | February 27<sup>th</sup> 2026    |
+| 1.1     | Updated to support AMMCLIB v1.1.44             | May 7<sup>th</sup> 2026          |
+| 1.2     | Updated to FRDM Automotive S32K3 + S32M27 (RTD 7.0.1) |August 27<sup>th</sup> 2026|

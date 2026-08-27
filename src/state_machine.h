@@ -1,7 +1,7 @@
 /*******************************************************************************
 *   Project      : FRDM_A_S32K312_MC_PMSM_FOC_2Sh
 *   Version      : 1.0
-*   RTD Version  : 7.0.0
+*   RTD Version  : 7.0.1
 *   Brief description  :
 *   File contains declaration of structures and functions needed
 *   for application state machine.
